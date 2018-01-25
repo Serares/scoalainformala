@@ -1,0 +1,12 @@
+.titlu {
+    background-color: #efefef;
+    height: 65px;
+    border: 1px solid rgb(202, 195, 195);
+}
+
+.titlu h1 {
+    font-size: 48px;
+    font-weight: 200;
+    margin: 0;
+    padding:0;
+}
