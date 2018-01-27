@@ -1,0 +1,178 @@
+html{
+    height:100%;
+    width:100%;
+}
+body{
+    max-width:100%;
+    height:100%;
+}
+.main-container{
+    height:100%;
+    width: 100%;
+}
+
+.container-stanga{
+    vertical-align: 1200%;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 200px;
+    height:100%;
+    background-color: teal;
+    border: 1px solid black;
+}
+
+.container-stanga img{
+    width:140px;
+    
+}
+
+.img{
+    padding-left:30px;
+}
+
+.img img{
+    margin:auto;
+    display: inline-block;
+}
+
+.img p{
+    margin-left:20px;
+    display: inline;
+    color:white;
+}
+
+.img a {
+    color:white;
+}
+
+.searchbar {
+    margin-top:20px;
+}
+
+.searchbar p{
+    display: inline;
+    color:white; 
+    margin-left:47px;
+}
+
+.searchbar [type="text"]{
+    width: 130px;
+    height:18px;
+    display:block;
+    margin:auto;
+    border: 2px solid grey;
+}
+
+.searchbar [type="submit"]{
+    width:80px;
+    height:18px;
+    background-color:rgb(43, 42, 42);
+    color:white;
+    border: 1px solid grey;
+    font-size:12px;
+    margin-left:58px;
+}
+
+#stmp {
+
+}
+
+#stmp a{
+    color: lightskyblue;
+    font-size: 20px; 
+    margin-left:55px;
+}
+
+#hmpg a{
+    color: white; 
+    margin-left: 10px;   
+}
+
+
+.lista p{
+    color: #cccc00;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.lista ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.lista ul a{
+    color:white;
+}
+
+.lista ul li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.text-jos {
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.text-jos a{
+    color: white;
+}
+
+.text-jos p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.container-dreapta{
+    vertical-align: 1400%;
+    display:inline-block;
+    margin-left: 20px;
+    /* float:right; */
+    max-width: 850px;
+    height:100%;
+    /* background-color: #efefef; */
+}
+
+.header{
+    
+    display: inline-block;
+    font-style: italic;
+}
+
+.header h1,h3,h4 {
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header h1{
+    color: rgba(170, 165, 165, 0.4);
+    text-decoration: underline;
+    font-size: 60px;
+    
+}
+
+.header h3 {
+    color:teal;
+}
+
+.header h4{
+    color: teal;
+    float:right;
+    vertical-align: -60%;
+}
+
+@media screen and (max-width: 958px){
+    .container-dreapta{
+        max-width:400px;
+    }
+}
+
+@media screen and (max-width: 658px){
+    .container-dreapta{
+        max-width:200px;
+    }
+}
