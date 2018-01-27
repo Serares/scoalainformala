@@ -1,7 +1,7 @@
 .titlu {
     background-color: #efefef;
-    height: 65px;
-    border: 1px solid rgb(202, 195, 195);
+    height: 60px;
+    border: 1px solid rgb(224, 216, 216);
 }
 
 .titlu h1 {
@@ -9,4 +9,86 @@
     font-weight: 200;
     margin: 0;
     padding:0;
+}
+
+.butoane{
+    margin-top: 3px;
+    max-width: 160px;
+    height: 200px;
+    display: inline-block;
+}
+
+.butoane button{
+    width: 154px;
+    height:43px;
+    border: 1px solid black;
+    border-radius:6px;
+    margin-top:9px;
+    font-size: 25px;
+    font-family: serif;
+    background: linear-gradient(rgb(201, 197, 197),white);
+    cursor: pointer;
+}
+
+
+.scris {
+    display:inline-block;
+    max-height:100px;
+    max-width:90%;
+    margin-left: 10px;
+}
+
+.scris h1{
+    font-size:36px;
+    margin: 0;
+}
+
+.scris p {
+    font-size: 18px;
+    margin: 10 0 0 0 ;
+}
+
+.scris ul {
+    padding-left:25px;
+}
+
+.scris li {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+.subsol {
+    border-top: 1px solid #aaaaaa;
+    margin-left: 160px;
+    margin-top: 30px;
+    
+}
+
+.subsol p {
+    font-size: 10px;
+    margin: 20 0 0 20;
+}
+
+.subsol a{
+    color: blue;
+    margin-left: 5px;
+}
+
+/* paginile de poeti */
+
+.portret{
+    margin-top: 3px;
+}
+
+.headerp {
+    display: inline-block;
+    vertical-align: 800%;
+}
+
+
+.poeti{
+    vertical-align:800%;
 }
