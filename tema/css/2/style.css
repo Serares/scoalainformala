@@ -1,0 +1,276 @@
+html{
+    width:100%;
+    height: 100%;
+}
+
+body{
+    max-width: 100%;
+    max-height:100%;
+    
+}
+
+.main-container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 100%;
+    max-height:100%;
+    /* background-color: brown; */
+}
+
+.header{
+    background-image: url('headerfundal.jpg');
+    background-position: center left;
+    width:900px;
+    height:200px;
+    margin:auto;
+    /* border-top: 1px solid black; */
+    box-shadow: -1px -1px 1px #716c6c;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+
+}
+
+.header-scris{
+
+    float:right;
+    margin:40px 100px 0 0;
+}
+
+.header-scris h1,h3{
+    font-weight: 200;
+    margin:0;
+    color: #2f2f1e;
+}
+
+.header-scris h1 {
+
+    font-size: 30px;
+    margin-bottom: 9px;
+}
+
+.header-scris h3{
+
+    font-size: 18px;
+
+}
+
+/* continutul */
+
+
+
+.continut{
+    position: relative;
+    width:900px;
+    height: 100%;
+    margin:auto;
+    margin-top: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #716c6c;
+    box-shadow: -1px 0px 1px #716c6c;
+}
+
+.continut:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('backgroundcont.png'); 
+    width: 100%;
+    height: 100%;
+    opacity : 0.2;
+    z-index: -1;
+}
+/* navbar sus */
+.nav-bar{
+    margin:auto;
+    height: 50px;
+    width: 800px;
+    background-color: #e6f3ff;
+    border-top: 1px solid #716c6c;
+    border-left: 1px solid #716c6c;
+    border-right: 1px solid #716c6c;
+
+}
+
+.nav-bar ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+
+.nav-bar ul li {
+    float : left;
+    margin-left: 14px;
+}
+
+.nav-bar ul li a {
+    display: block;
+    color: #005cb3;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+
+/* scris din continut si navbar stanga */
+
+
+.scris-continut {
+
+    height:100%;
+    box-sizing: content-box;
+
+}
+
+.side-bar{
+    margin-top: 16px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 23%;
+}
+
+.side-bar div,ul{
+    float: left;
+    clear: both;
+}
+
+.side-bar img{
+
+    display: inline-block;
+    width:13px;
+    height: 13px;
+
+}
+
+.buton-main,.buton-block{
+    display: inline-block;
+    background-color: #c6ff1a;
+    width: 177px;
+    height: 41px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.menu-list{
+    display: inline-block;
+    list-style: none;
+    background-color: #fcf6f6;
+    padding: 0;
+    padding-left: 8px;
+    width: 177px;
+    box-sizing: content-box;
+    margin-top: 3px;
+}
+
+.menu-list img{
+
+    display: inline-block;
+    width: 10px;
+    height:10px;
+
+}
+
+.menu-list li {
+
+    margin-bottom: 4px;
+
+}
+
+.menu-list li a {
+
+    font-size: 12px;
+
+}
+
+.block-scris p {
+    font-size: 15px;
+
+}
+
+.block-scris{
+    margin-top: 3px;
+    display: inline-block;
+    font-size: 15px;
+    background-color: #fcf6f6;
+    width: 177px;
+    box-sizing: content-box;
+    padding-left: 8px;
+}
+
+
+.scris{
+    float:right;
+    display:inline-block;
+    width:73%;
+}
+
+.scris div {
+    display: inline-block;
+    
+}
+
+.scris p {
+
+    font-size: 26px;
+    font-weight: 400;
+
+}
+
+.gallery{
+
+    height: 30%;
+    margin-bottom: 57px;
+
+}
+
+.subscription,.other{
+
+    width:48%;
+
+}
+
+.subscription div,.other div{
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+    background-color:#c6ff1a;
+    width: 106px;
+    height: 25px;
+    padding: 5px;
+    text-align: center;
+}
+
+.subscription a, .other a{
+    font-size: 14px;
+    color: navy;
+    text-decoration:none;
+    font-weight: bolder;
+}
+
+.other{
+
+    margin-left:10px;
+
+}
+
+.subscription{
+
+    border-right: 1px solid black;
+
+}
+
+.footer{
+    display:flex;
+    background-color: #c6ff1a;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+
