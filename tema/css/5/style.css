@@ -110,6 +110,7 @@ body{
     transform: rotate(-90deg);
     margin-right: 30px;
     margin-top: 26px;
+    transition: all 0.5s ease;
 }
 
 .qes1 .cont{
@@ -129,6 +130,7 @@ body{
 }
 
 .img-rotate {
+    transition: all 0.5s ease;
     float:right;
     width: 20px;
     height:20px;
