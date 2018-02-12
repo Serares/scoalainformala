@@ -102,7 +102,7 @@ body{
 
 }
 
-.qes1 img{
+.qes1 .img{
     /* display:inline-block; */
     float:right;
     width: 20px;
@@ -126,4 +126,13 @@ body{
     font-size: 14px;
     color: #333;
     width: 96%;
+}
+
+.img-rotate {
+    float:right;
+    width: 20px;
+    height:20px;
+    transform: rotate(90deg);
+    margin-right: 30px;
+    margin-top: 26px;
 }
