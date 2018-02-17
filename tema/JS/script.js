@@ -103,16 +103,51 @@ console.log(impartire1(10,2));
 
     function mpgtoLitri(a){
 
-        var km = a * 1.609;
-        var result = km *
-        
+        var km = a* 1.609;
+        var result1 = (4.55/km) *100;
+        var result = 235 /a;
+        console.log(result1," l/100km US");
+        console.log(result," l/100km UK");
 
     }
 
-    console.log(mpgtoLitri(2));
+    mpgtoLitri(60);
+
 
 
 // Transforma din Celsius in Fahrenheit
+
+    function celToFaren(a){
+
+        var result = a * 1.8 +32;
+        return result;
+    }
+    console.log("Celsius in Fahrenheit ",celToFaren(30));
 // Transforma din Grade in Radiani
+
+    function gradeToRadian(a){
+
+        var result = a/63.6619772;
+        var result2= a *(Math.PI/180);
+        return result2;
+
+    }
+    console.log(gradeToRadian(1));
 // Returneaza suplementul unui unghi (suma unghiurilor este 180)
+
+
+    function suplement(a){
+
+        var result = 180 -a;
+
+        return result;
+
+    }
+    console.log(suplement(80));
 // Returneaza complementul unui unghi (suma unghiurilor este 90)
+
+    function compl(a){
+
+        return 90-a;
+
+    }
