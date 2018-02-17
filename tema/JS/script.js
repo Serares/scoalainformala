@@ -103,8 +103,9 @@ console.log(impartire1(10,2));
 
     function mpgtoLitri(a){
 
-        var conversie = a * ((62.1371/100)/1);
-        return conversie;
+        var km = a * 1.609;
+        var result = km *
+        
 
     }
 
