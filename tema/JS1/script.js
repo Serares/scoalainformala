@@ -147,7 +147,7 @@ function cinci(a){
 // O functie care primeste un sir de caractere si returneaza ultimele 10 litere (daca exista);
 //  cum fac sa inversez rezultatul;
 
-var zecelitere = "81239abcdefghiab";
+var zecelitere= "810defghia1bb";
 
     function zece(a){
         var litere = "";
@@ -173,40 +173,212 @@ var zecelitere = "81239abcdefghiab";
         return celezece;
     }
 
-    console.log(zece(zecelitere));
+    console.log("Ultimele zece litere",zece(zecelitere));
 
 // O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter pentru prima oara in sir
 
-    function pozCaracter(a,b){
+    function pozCaracter(a,b,c){
+        var caracter = "";
+        var num;
+        for(let i=0;i<a.length;i++){
 
 
 
+            if(a[i] === b){
+                caracter += "primul caracter "+ b +" este la pozitia "+ i;
+                return caracter;
+            }
+
+        }
+        if(caracter == "" ){
+            return "Nu exista acest caracter";
+        }
+        // return caracter;
     }
 
+    console.log(pozCaracter(zecelitere,"1"));
+    
+    
+
 // O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter pentru ultima oara in sir
+
+    function lastCar(a,b){
+
+        var caracter= "";
+        for(let i=a.length-1;i>=0;i--){
+
+            if(a[i] === b){
+               caracter += "ultimul caracter "+a[i] +" este la pozitia "+i;
+               return caracter;
+            }
+
+        }
+        if(caracter == "" ){
+            return "Nu exista acest caracter";
+        }
+
+    }
+    console.log(lastCar(zecelitere,"1"));
+
 // O functie care primeste o lista de siruri de caractere si returneaza sirurile concatenate
+
+    var siruri = ["abc","def","ghi"];
+
+    function concat(a){
+        var sir ="";
+
+        for(let i =0;i<a.length;i++){
+            sir+= a[i];
+        }
+        if(sir == "" ){
+            return "Lista este goala";
+        }
+        return sir;
+    }
+
+    console.log(concat(siruri));
+
+
 // O functie care primeste o lista de siruri de caractere si inca un sir de caractere si returneaza sirurile concatenate despartite prin respectivul sir ( de ex ["asd", "qwe", "zxc"] si despartitorul este ": ", rezultatul este  "asd: qwe: zxc")
-// Calculeaza factorialul unui numar
 
+    function concatDel(a,b){
 
-    function factorial(a){
-        var numere;
-        var toateNumerele;
+        var sir="";
 
-        
+        for(let i =0;i<a.length;i++){
 
-        for(let i =0;i<numere.length;i++){
+            if(i == a.length-1){
+                sir+= a[i];
+                return sir;
+            }
+            sir += a[i] + b;
 
         }
 
+        return sir;
+
+    }
+    console.log(concatDel(siruri,"/"));
+
+// Calculeaza factorialul unui numar
+
+    
+
+    function factorial(a){
+        var numere=[];
+
+        for(let i =1;i<=a;i++){
+
+            numere+= i;
+
+        }
+        var fact= 1;
+
+        for(let i=0;i<numere.length;i++){
+            fact *= numere[i];
+        }
+        return "Factorialul pentru "+a+" este "+ fact;
+    }
+
+    console.log(factorial(5));
+
+// Calculeaza cel mai mare divizor comun al 2 numere
+
+
+
+// Calculeaza cel mai mic multiplu comun al 2 numere
+
+
+
+// Returneaza un array care sa contina toti divizorii unui numar. Ex pentru 64: trebuie sa returneze [2,4,8,16,32]
+
+    function divizorii(a){
+        var list=[];
+
+        for(let i =1;i<a;i++){
+
+            if(a%i == 0){
+
+                if(i == list.length-1){
+                    list+= i;
+                    return list;
+                }
+                list+= i +",";
+            }
+
+        }
+        return "Divizorii primi ai lui "+ a+" sunt " + list;
 
     }
 
-// Calculeaza cel mai mare divizor comun al 2 numere
-// Calculeaza cel mai mic multiplu comun al 2 numere
-// Returneaza un array care sa contina toti divizorii unui numar. Ex pentru 64: trebuie sa returneze [2,4,8,16,32]
+    console.log(divizorii(65));
+
+
 // Returneaza un array care sa contina toti divizorii primi a unui numar. Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2,2,2]
+
+
+
+
 // Returneaza un array care sa contina toti divizorii unici primi a unui numar: Ex pentru 64: trebuie sa returneze [2]
+
+function divizorPrim(a){
+    var list=[];
+
+    for(let i =1;i<=a;i++){
+
+        if(a%2 ==0){
+            i =2;
+        }
+
+        if(a%i == 0){
+            
+            list+= i +" Divizorul prim al lui "+a;
+            return list;
+        }
+
+    }
+    
+
+}
+    console.log(divizorPrim(65));
+
 // Care primeste 2 arrayuri ca parametriu si returneaza un singur array cu toate elementele
+
+    var ar1= [1];
+    var ar2 = [2,3,4,5,"sapte"];
+
+    function legare(a,b){
+
+        var tot=[];
+
+        for(let i= 0;i<a.length;i++){
+            tot.push(a[i]);
+        }
+
+        for(let j=0;j<b.length;j++){
+            tot.push(b[j]);
+        }
+        return tot;
+    }
+    console.log(legare(ar1,ar2));
+
 // Care returneaza un String in ordine inversa. Ex: pentru ABC returneaza CBA
+    var inve = "mihaita";
+    function inversStr(a){
+        var strinv ="";
+        for(let i = a.length-1;i>=0;i--){
+
+            strinv+= a[i];
+
+        }
+        return "Inversul lui "+a+ " este " +strinv;
+    }
+    console.log(inversStr(inve));
+
 // Care verifica daca un numar este palindrom (se scrie la fel si de la sfarsit la inceput si de la inceput la sfarsit. Ex: ASDDSA)
+
+    function palindrom(a){
+
+        
+
+    }
