@@ -284,6 +284,13 @@ var zecelitere= "810defghia1bb";
 
 // Calculeaza cel mai mare divizor comun al 2 numere
 
+    function cmmdc(a,b){
+
+
+
+
+    }
+
 
 
 // Calculeaza cel mai mic multiplu comun al 2 numere
@@ -307,11 +314,11 @@ var zecelitere= "810defghia1bb";
             }
 
         }
-        return "Divizorii primi ai lui "+ a+" sunt " + list;
+        return "Divizorii lui "+ a+" sunt " + list;
 
     }
 
-    console.log(divizorii(68));
+    console.log(divizorii(62));
 
 
 // Returneaza un array care sa contina toti divizorii primi a unui numar. Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2,2,2]
@@ -320,27 +327,43 @@ var zecelitere= "810defghia1bb";
 
 
 // Returneaza un array care sa contina toti divizorii unici primi a unui numar: Ex pentru 64: trebuie sa returneze [2]
+// prim 
 
-function divizorPrim(a){
-    var list=[];
 
-    for(let i =1;i<=a;i++){
+function prime(a){
 
-        if(a%2 ==0){
-            i =2;
-        }
+    for(let i=2;i<a;i++){
 
         if(a%i == 0){
+            return "Nu este prim"
+        }
+    }
+
+    return "Este prim";
+
+}
+
+
+function divizorPrim(a){
+
+    var list=[];
+
+    for(let i =1;i <= a ;i++){
+
+        if(a%i == 0 && prime(i) == "Este prim"){
+
             
-            list+= i +" Divizorul prim al lui "+a;
-            return list;
+            list += i + " ";
+            
         }
 
     }
+
     
+    return list;
 
 }
-    console.log(divizorPrim(65));
+    console.log("Divizorii primi ",divizorPrim(64));
 
 // Care primeste 2 arrayuri ca parametriu si returneaza un singur array cu toate elementele
 
@@ -390,3 +413,9 @@ function divizorPrim(a){
         return true+" "+a;
     }
     console.log("palindrom",palindrom(pal));
+
+
+
+    
+
+    
