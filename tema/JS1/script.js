@@ -153,9 +153,10 @@ var zecelitere= "810defghia1bb";
         var litere = "";
         var celezece = "";
         var inversate = "";
+
         for(let i =a.length-1; i>=0;i--){
 
-            if(a[i]!= "1" && a[i] != "2" && a[i] != "3" && a[i] != "4" && a[i] != "5" && a[i] != "6"  && a[i] != "7" && a[i] != "8" && a[i] != "9"){
+            if(a[i]!= "0" && a[i]!= "1" && a[i] != "2" && a[i] != "3" && a[i] != "4" && a[i] != "5" && a[i] != "6"  && a[i] != "7" && a[i] != "8" && a[i] != "9"){
     
                 
                 litere += a[i];
@@ -163,7 +164,7 @@ var zecelitere= "810defghia1bb";
             }     
         }
 
-        for(let i=0;i<10;i++){
+        for(let i=litere.length-1;i>=0;i--){
 
             if(litere[i] == undefined){
                 return celezece;
@@ -180,9 +181,8 @@ var zecelitere= "810defghia1bb";
     function pozCaracter(a,b,c){
         var caracter = "";
         var num;
+
         for(let i=0;i<a.length;i++){
-
-
 
             if(a[i] === b){
                 caracter += "primul caracter "+ b +" este la pozitia "+ i;
@@ -311,7 +311,7 @@ var zecelitere= "810defghia1bb";
 
     }
 
-    console.log(divizorii(65));
+    console.log(divizorii(68));
 
 
 // Returneaza un array care sa contina toti divizorii primi a unui numar. Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2,2,2]
@@ -377,8 +377,16 @@ function divizorPrim(a){
 
 // Care verifica daca un numar este palindrom (se scrie la fel si de la sfarsit la inceput si de la inceput la sfarsit. Ex: ASDDSA)
 
+    var pal = "racecar";
+
     function palindrom(a){
 
-        
+        for(let i = 0; i< a.length; i++){
+            if(a[i] != a[ a.length -i-1]){
+                return false +" "+a;
+            }
+        }
 
+        return true+" "+a;
     }
+    console.log("palindrom",palindrom(pal));
