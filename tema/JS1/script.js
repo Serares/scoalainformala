@@ -349,8 +349,19 @@ var zecelitere= "810defghia1bb";
 
 // Returneaza un array care sa contina toti divizorii primi a unui numar. Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2,2,2]
 
-
-
+function factoriiPrimi(n) {
+    var factors = [];
+    
+    for (var i = 2; i <= n; i++) {
+        while ((n % i) === 0) {
+            factors.push(i);
+            n /= i;
+        }
+    }
+    
+    return "Facotrii primi sunt " + factors;
+}
+    console.log(factoriiPrimi(100));
 
 // Returneaza un array care sa contina toti divizorii unici primi a unui numar: Ex pentru 64: trebuie sa returneze [2]
 // prim 
