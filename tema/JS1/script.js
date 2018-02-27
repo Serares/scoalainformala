@@ -333,10 +333,10 @@ var zecelitere= "810defghia1bb";
             if(a%i == 0){
 
                 if(i == list.length-1){
-                    list+= i;
+                    list.push(i);
                     return list;
                 }
-                list+= i +",";
+                list.push(i);
             }
 
         }
@@ -344,7 +344,7 @@ var zecelitere= "810defghia1bb";
 
     }
 
-    console.log(divizorii(62));
+    console.log(divizorii(84));
 
 
 // Returneaza un array care sa contina toti divizorii primi a unui numar. Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2,2,2]
@@ -386,10 +386,10 @@ function divizorPrim(a){
     }
 
     
-    return list;
+    return "Divizorii primi ai lui "+ a + " " +list;
 
 }
-    console.log("Divizorii primi ",divizorPrim(64));
+    console.log("Divizorii primi ",divizorPrim(84));
 
 // Care primeste 2 arrayuri ca parametriu si returneaza un singur array cu toate elementele
 
@@ -426,7 +426,7 @@ function divizorPrim(a){
 
 // Care verifica daca un numar este palindrom (se scrie la fel si de la sfarsit la inceput si de la inceput la sfarsit. Ex: ASDDSA)
 
-    var pal = "racecar";
+    var pal = "abccba";
 
     function palindrom(a){
 
