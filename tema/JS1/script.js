@@ -286,14 +286,40 @@ var zecelitere= "810defghia1bb";
 
     function cmmdc(a,b){
 
+        var divA = [];
+        var divB = [];
+        var comuni = [];
+        var mare = [];
 
+        for(let i =1;i<a;i++){
+            if(a%i == 0){
+                divA.push(i);
+            }
+        }
 
+        for(let i =1;i<b;i++){
+            if(b%i == 0){
+                divB.push(i);
+            }
+        }
+
+        for(let i =0; i<divA.length; i++){
+            for(let j = 0; j<divB.length; j++){
+                if(divA[i] === divB[j]){
+                    comuni.push(divA[i]);
+                }
+            }
+        }
+
+        mare = max(comuni);
+        return mare;
 
     }
 
-
+    console.log("Cel mai mare divizor comun este ", cmmdc(100,50));
 
 // Calculeaza cel mai mic multiplu comun al 2 numere
+
 
 
 
