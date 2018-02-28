@@ -291,13 +291,13 @@ var zecelitere= "810defghia1bb";
         var comuni = [];
         var mare = [];
 
-        for(let i =1;i<a;i++){
+        for(let i =1;i<=a;i++){
             if(a%i == 0){
                 divA.push(i);
             }
         }
 
-        for(let i =1;i<b;i++){
+        for(let i =1;i<=b;i++){
             if(b%i == 0){
                 divB.push(i);
             }
@@ -316,11 +316,29 @@ var zecelitere= "810defghia1bb";
 
     }
 
-    console.log("Cel mai mare divizor comun este ", cmmdc(100,50));
+    console.log("Cel mai mare divizor comun este ", cmmdc(12,6));
 
 // Calculeaza cel mai mic multiplu comun al 2 numere
 
+function cmmmc(n,s){
 
+                                               
+
+    var produs = n * s;
+
+    var cmm = cmmdc(n,s);
+
+    var cm = produs /cmm;
+
+   
+
+    return "CMMMC al "+ n+ " si "+ s + " este " +cm;
+
+   
+
+}
+
+console.log(cmmmc(6,2));
 
 
 // Returneaza un array care sa contina toti divizorii unui numar. Ex pentru 64: trebuie sa returneze [2,4,8,16,32]
@@ -359,9 +377,9 @@ function factoriiPrimi(n) {
         }
     }
     
-    return "Facotrii primi sunt " + factors;
+    return factors;
 }
-    console.log(factoriiPrimi(100));
+    console.log("Facotori primi de 68 ",factoriiPrimi(68));
 
 // Returneaza un array care sa contina toti divizorii unici primi a unui numar: Ex pentru 64: trebuie sa returneze [2]
 // prim 
@@ -405,7 +423,7 @@ function divizorPrim(a){
 // Care primeste 2 arrayuri ca parametriu si returneaza un singur array cu toate elementele
 
     var ar1= [1];
-    var ar2 = [2,3,4,5,"sapte"];
+    var ar2 = [2,3,4,5,"2"];
 
     function legare(a,b){
 
