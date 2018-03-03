@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+    <head>
+
+        <title>DOM2</title>
+        <style>
+        
+        
+
+        </style>
+
+    </head>
+    <body>
+
+    <form onsubmit="validare(this,event)">
+
+   
+
+    <fieldset>
+
+                           
+
+    <legend>Contule tau:</legend>
+
+                           
+
+     <lable for="nume">Nume:</lable><input type="text" id="nume"><br>
+
+        <lable for="prenume">Prenume:</lable><input type="text" id="prenume"><br>
+
+        <p style="display:none; margin:5px;" id="alert"> Ati introdus aceeasi valoare in campurile de mai sus</p>
+        <p style="display:none; margin:5px;" id="alert2"> Inputurile sunt goale</p>
+        <lable for="email">E-mail:</lable><input type="text" id="email"><br>
+
+                           
+
+        <lable for="tara">Alege tara:</lable>
+
+                           
+
+        <select id="tara">
+
+        <option>Rusia</option>
+        <option>Romania</option>
+         <option>Germania</option>
+          <option>Cehia</option>
+
+    </select> <br>
+
+                           
+
+     <lable for="gen">Alege sexul:</lable>
+
+                           
+
+         <select id="gen">
+
+                                           
+
+            <option>M</option>
+
+             <option>F</option>
+
+            <option>Other</option>
+
+
+
+        </select> <br>
+
+                           
+
+<lable for="termeni">Accepta termenii si conditiile</lable><input type="checkbox" id="termeni"> <br>
+<lable for="abonare">Te abonezi la promotii?</lable><input type="checkbox" id="abonare"> <br>
+
+ <lable for="varsta">Ai peste 18 ani?</lable><input type="checkbox" id="varsta"> <br>
+
+                           
+
+<p> De unde ai auzit despre acest site?:</p>
+
+<lable for="prt">De la prieteni</lable><input type="radio" id="prt" name="intrebare"> <br>
+
+<lable for="med">De pe mediile de socializare</lable><input type="radio" id="med" name="intrebare"> <br>
+  <lable for="altcv">Din alta parte</lable><input type="radio" id="altcv" name="intrebare"> <br>
+
+                           
+
+                           
+
+     <input type="submit" value="Submit">
+
+                           
+
+            </fieldset>
+
+
+
+</form>
+
+
+        <script>
+            
+            
+
+               
+
+                               
+
+function validare(elem,e){
+
+               
+
+                e.preventDefault();
+
+               
+
+                var num = document.getElementById('nume');
+
+                var prenume = document.getElementById('prenume');
+
+                var alert = document.getElementById('alert');
+
+                var alert2 = document.getElementById('alert2');
+
+               
+
+                if(num.value.length === prenume.value.length && num.value.length != 0 && prenume.value.length != 0){
+
+                               
+
+                    num.style.backgroundColor = "#ff6666";
+
+                    prenume.style.backgroundColor = "#ff6666";
+
+                    alert.style.display = "block";
+
+                    alert2.style.display = "none";
+
+                               
+
+                }  else if (num.value.length == 0 && prenume.value.length == 0){
+
+                    num.style.backgroundColor = "red";
+
+                    prenume.style.backgroundColor = "red";
+
+                    alert2.style.display = "block";
+
+                               
+
+                } else if(num.value.length > prenume.value.length){
+
+                               
+
+                    num.style.backgroundColor = "green";
+
+                    prenume.style.backgroundColor = "";
+
+                    alert.style.display = "none";
+
+                    alert2.style.display = "none";
+
+                               
+
+                } else if(num.value.length < prenume.value.length){
+
+                               
+
+                    num.style.backgroundColor = "";
+
+                    prenume.style.backgroundColor = "green";
+
+                    alert.style.display = "none";
+
+                               
+
+                               
+
+                }
+
+               
+
+}
+
+
+
+
+
+
+
+
+            
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+    <head>
+
+        <title>DOM7</title>
+        <meta charset="utf-8">
+
+    </head>
+
+    <body>
+        
+            <form onsubmit="valMare(this,event)">
+
+               
+
+        <fieldset>
+
+                                   
+
+                    <legend>Contule tau:</legend>
+
+                                   
+
+                    <lable for="nume">Input1:</lable><input type="text" id="nume" onkeyup="numar(this,event)" onkeypress="stop(this,event)"> <span id="count">0</span>
+
+                    
+
+                    
+
+                
+
+                                   
+
+    </fieldset>
+
+   
+
+    </form> 
+
+        <script>
+
+            var count = document.querySelector('#count');
+
+            function numar(elem, e){
+
+                
+                count.innerHTML = elem.value.length;
+
+                
+
+            }
+            
+            function stop(elem,e){
+                
+                console.log(elem.value.length);
+                if(elem.value.length >= 10){
+                    e.preventDefault();
+                }
+            }
+
+    </script>
+
+</body>
+
+</html>

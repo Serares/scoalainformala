@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+    
+       
+   
+
+        
+    
+    </script>
+</head>
+
+
+<body>
+
+               
+
+               
+
+	<form onsubmit="validare(this,event)">
+
+   
+
+		<fieldset>
+	
+							   
+	
+		<legend>Contule tau:</legend>
+	
+							   
+	
+		 <lable for="nume">Nume:</lable><input type="text" id="nume"><br>
+	
+			<lable for="prenume">Prenume:</lable><input type="text" id="prenume"><br>
+	
+							   
+	
+							   
+	
+		 <input type="submit" value="Submit">
+	
+							   
+	
+				</fieldset>
+	
+	
+	
+	</form>             
+
+   
+
+	<script>
+
+   
+
+				   
+
+					function validare(elem,e){
+
+								   
+
+									e.preventDefault();
+
+								   
+
+									var num = document.getElementById('nume');
+
+									var prenume = document.getElementById('prenume');
+
+									var alert = document.getElementById('alert');
+
+								   
+
+									if(num.value === prenume.value){
+
+												   
+
+										num.style.backgroundColor = "green";
+
+										prenume.style.backgroundColor = "green";
+
+										alert.style.display = "block";
+
+												   
+
+									} else {
+
+												   
+
+										num.style.backgroundColor = "red";
+
+										prenume.style.backgroundColor = "red";
+
+										alert.style.display = "none";		   
+
+									}
+			   
+
+					}
+
+				   
+
+
+
+   
+
+	</script>
+
+   
+
+   
+
+</body>
+
+
+</html>

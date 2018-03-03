@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+    <head>
+
+        <title>DOM5</title>
+        <meta charset="utf-8">
+
+    </head>
+
+    <body>
+        
+            <form onsubmit="valMare(this,event)">
+
+               
+
+        <fieldset>
+
+                                   
+
+                    <legend>Suma</legend>
+
+                                   
+
+                    <lable for="nume">Input1:</lable><input type="text" id="nume" ><br>
+
+                    <lable for="prenume">Input2:</lable><input type="text" id="prenume" ><br>
+
+                    <p style="display:none; margin:5px;" id="alert"> Ati introdus aceeasi valoare in campurile de mai sus</p>
+
+                    <p style="display:none; margin:5px;" id="alert2"> Fara litere</p>
+
+                    <lable for="email">Input3:</lable><input type="text" id="email"><br>
+
+                                   
+
+                                   
+
+                                   
+
+                 <input type="submit" value="Submit">
+
+                                   
+
+    </fieldset>
+
+   
+
+    </form> 
+
+        <script>
+
+
+           
+
+
+        
+        function valMare(elem,e){
+
+                                               
+
+e.preventDefault();
+
+
+
+var num = document.getElementById('nume');
+
+var prenume = document.getElementById('prenume');
+
+var alert = document.getElementById('alert');
+
+var alert2 = document.getElementById('alert2');
+
+var email = document.getElementById('email');
+
+// verific daca sunt litere;
+
+for(var i = 0;i<num.value.length;i++){
+
+    if(num.value[i] >= "a" && nume.value[i] <= "z"){
+
+        num.style.backgroundColor = "#ff6666";
+        alert2.style.display = "block";
+
+        email.value = "";
+        num.value = "";
+        prenume.value = "";
+        } else {
+            alert2.style.display = "none";
+        }
+
+
+}
+
+
+for(var j=0;j<prenume.value.length;j++){
+
+    if( prenume.value[j] >= "a" && prenume.value[j] <= "z"){
+
+    
+
+    prenume.style.backgroundColor = "#ff6666";
+
+    alert2.style.display = "block";
+
+    email.value = "";
+    num.value = "";
+    prenume.value = "";
+    } else {
+        email.style.backgroundColor = "#ccf2ff";
+        alert2.style.display = "none";
+    }
+
+}
+
+//  verific daca sunt goale inputurile
+
+
+if(num.value.length == 0 ){
+
+    num.style.backgroundColor = "red";
+
+
+}else{
+    num.style.backgroundColor = "";
+} 
+ 
+
+ if(prenume.value.length == 0){
+
+    prenume.style.backgroundColor = "red";
+    
+} else {
+    prenume.style.backgroundColor = "";
+}
+
+
+// afisez suma;
+
+   email.value = parseInt(nume.value) + parseInt(prenume.value);
+   
+
+}
+        
+        </script>
+
+
+    </body>
+</html>
