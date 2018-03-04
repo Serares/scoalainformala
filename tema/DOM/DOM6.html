@@ -18,7 +18,7 @@
 
                                    
 
-                    <legend>Contule tau:</legend>
+                    <legend>Numar caractere:</legend>
 
                                    
 
@@ -40,13 +40,13 @@
 
         <script>
 
+            // nu pot sa inregistrez evenimentul de pe backspace 
             var count = document.querySelector('#count');
 
             function numar(elem, e){
 
                 
                 count.innerHTML = elem.value.length;
-
                 
 
             }
@@ -54,9 +54,14 @@
             function stop(elem,e){
                 
                 console.log(elem.value.length);
+                console.log(e.keyCode);
                 if(elem.value.length >= 10){
+                    elem.style.backgroundColor = "red";
                     e.preventDefault();
-                }
+                    
+                } else if(elem.value.length <= 10){
+                    elem.style.backgroundColor = "";
+                } 
             }
 
     </script>
