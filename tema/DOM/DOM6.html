@@ -45,7 +45,7 @@
 
             function numar(elem, e){
 
-                
+                console.log(e.key);
                 count.innerHTML = elem.value.length;
                 
 
@@ -53,8 +53,8 @@
             
             function stop(elem,e){
                 
-                console.log(elem.value.length);
-                console.log(e.keyCode);
+                // console.log(elem.value.length);
+                // console.log(e.keyCode);
                 if(elem.value.length >= 10){
                     elem.style.backgroundColor = "red";
                     e.preventDefault();

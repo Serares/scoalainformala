@@ -1,0 +1,389 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        
+        /* td{
+            border: 1px solid black;
+        } */
+
+        .desc{
+            background-color: red;
+        }
+
+        .asc{
+            background-color: blue;
+        }
+
+        .container{
+            width: 200px;
+            clear:both;
+        }
+        
+        .container input[type="text"]{
+            width: 100%;
+            clear: right;
+        }
+        
+        .container input[type="submit"]{
+            margin-top: 10px;
+        }
+
+        form{
+
+            margin-bottom : 30px;
+
+        }
+    </style>
+    
+</head>
+
+
+
+<body onload="drawClienti()">
+
+    <div class="container">
+    <form method="POST" onsubmit="preluareDate(this,event)">
+
+       <label>Nume</label> <input type="text" id="nume" onkeypress="doarLitere(this,event)">
+
+       <p id="alertNum" style="display:none;">Doar litere </p> 
+
+       <label>prenume</label> <input type="text" id="prenume" onkeypress="doarLitere(this,event)">
+
+       <p id="alertPre" style="display:none;">Doar litere </p> 
+
+       <label>varsta</label> <input type="text" id="varsta" onkeypress="doarNumar(this,event)"> 
+
+       <p id="alertVar" style="display:none;">Doar cifre </p> 
+
+       <label>telefon</label> <input type="text" id="telefon" onkeypress="doarNumar(this,event)">
+
+       <p id="alertTel" style="display:none;">Doar cifre </p> 
+
+       <input type="submit" value="Insert">
+        <input type="reset" value="Reset">
+    </form>
+
+    </div>
+
+    <table border= "1"; id="tabelclienti">
+
+        <thead>
+
+        <tr>
+            <td>Nr.</td>
+            <td onclick="sorteaza('nume',this)">nume</td>
+            <td onclick="sorteaza('prenume',this)">prenume</td>
+            <td onclick="sorteaza('varsta',this)">varsta</td>
+            <td >telefon</td>
+            <td> <button onclick="sterge()">Sterge</button> </td>
+
+        </tr>
+        
+    </thead>
+
+    <tbody >
+        <!-- <tr>
+            <td>nourescu</td>
+            <td>bogdan</td>
+            <td>29</td>
+            <td>07632163127</td>
+        </tr> -->
+    </tbody>
+    </table>
+
+    <script>
+
+
+            var listaClienti = [
+        
+            {
+                nume:"nourescu",
+                prenume:"bogdan",
+                varsta: 29,
+                telefon: ["07236293819"]
+            },
+        
+            {
+                nume:"vlad",
+                prenume:"cosmin",
+                varsta: 57,
+                telefon: ["072234819"]
+            },
+        
+            {
+                nume:"titel",
+                prenume:"ciocan",
+                varsta: 18,
+                telefon: ["073523219"]
+            },
+    
+            {
+                nume:"gica",
+                prenume:"manuc",
+                varsta: 28,
+                telefon: ["073523219"]
+            },
+    
+            {
+                nume:"sarbu",
+                prenume:"baurceanu",
+                varsta: 28,
+                telefon: ["073523219","08321998213"]
+            }
+        
+        
+            ];
+    
+            function drawClienti(){
+    
+                var tabel = document.querySelector("#tabelclienti tbody");
+                var str = "";
+                for(let i = 0; i<listaClienti.length;i++){
+    
+                    
+                    
+                    
+                    
+    
+    
+                  var rand =  `
+                  
+                    <tr>
+                    <td> ${i+1}</td>
+                <td>${listaClienti[i].nume}</td>
+                <td>${listaClienti[i].prenume}</td>
+                <td>${listaClienti[i].varsta}</td>
+                <td>${listaClienti[i].telefon}</td>
+                    </tr>
+                
+                    `;
+                    str += rand;
+                }
+    
+                tabel.innerHTML = str;
+                // console.log(str)
+            }
+    
+            var coloanaSortare = "";
+            var directieSortare = "asc";    
+    
+    
+            function sorteaza(coloana,td){
+    
+                var lastElem = document.querySelector('.asc, .desc');
+                
+                if(lastElem !== null){
+    
+                    lastElem.classList.remove("asc");
+                    lastElem.classList.remove("desc");
+    
+                }
+    
+    
+                if(coloanaSortare !== coloana){
+                    coloanaSortare = coloana;
+                    directieSortare = "asc";
+                } else if (directieSortare === "asc"){
+                    directieSortare = "desc";
+                } else {
+                    directieSortare = "asc";
+                }
+    
+    
+                listaClienti.sort(function(a,b){
+    
+                    if(a[coloana]>b[coloana]){
+                        return 1;
+                    }
+                        
+                      else  if(a[coloana]<b[coloana]){
+                        return -1;
+                      } 
+                       
+    
+                       else{
+                        return 0;
+                       }
+                        
+                      
+                });
+    
+    
+                        if(directieSortare==="desc"){
+    
+                            listaClienti.reverse();
+    
+                        }
+    
+    
+                console.log(listaClienti);
+                drawClienti();
+                td.classList.add(directieSortare);
+            }
+    
+    
+    
+        // functia de sters
+
+            function sterge(){
+    
+                var mesaj = prompt('Introdu numarul randului', '1');
+    
+                if( mesaj == null || mesaj >= "a" && mesaj <= "z"){
+    
+                    alert('Fara litere');
+    
+                } else {
+                    listaClienti.splice(mesaj-1,1);
+                }
+                
+                drawClienti();
+            }
+    
+            // verific daca sunt cifre in inputuri
+            
+            function doarNumar(elem, e){
+            
+
+            if(e.key >= "a" && e.key <= "z"){
+                e.preventDefault();
+            }
+    
+            if(e.key >= "A" && e.key <= "Z"){
+                e.preventDefault();
+            }
+    
+        }
+    
+        // verific de litere
+
+        function doarLitere(elem, e){
+            
+            
+            if(e.key == "1" || e.key == "2" || e.key == "3" || e.key == "4" || e.key == "5" || e.key == "6" || e.key == "7" || e.key == "8" || e.key == "9"){
+                e.preventDefault();
+            }
+           
+    
+        }
+
+            // inserez datele in tabel
+    
+            function preluareDate(elem,e){
+    
+                var  nume = document.querySelector('#nume');
+                var  prenume = document.querySelector('#prenume');
+                var  varsta = document.querySelector('#varsta');
+                var  telefon = document.querySelector('#telefon');
+    
+                var alertaNum = document.querySelector('#alertNum');
+                var alertaPre = document.querySelector('#alertPre');
+                var alertaVar = document.querySelector('#alertVar');
+                var alertaTel = document.querySelector('#alertTel');
+    
+                var num = false;
+                var pre = false;
+                var age = false;
+                var tel = false;
+                e.preventDefault();
+    
+                if(nume.value.length != 0 && prenume.value.length != 0 && varsta.value.length != 0 && telefon.value.length != 0){
+
+                    
+
+                    for(let i =0; i<nume.value.length;i++){
+    
+                    if(nume.value[i] >= 'a' && nume.value[i] <= 'z'){
+                        num = true;
+                        nume.style.backgroundColor = "#4286f4";
+                        alertaNum.style.display = "none";
+                    } else {
+                        alertaNum.style.display = "block";
+                        nume.style.backgroundColor = "#f44141";
+                    }
+    
+                }
+
+    
+                for(let i =0; i<prenume.value.length;i++){
+    
+                    if(prenume.value[i] >= 'a' && prenume.value[i] <= 'z'){
+                        pre = true;
+                        prenume.style.backgroundColor = "#4286f4";
+                        alertaPre.style.display = "none";
+                    } else {
+                        alertaPre.style.display = "block";
+                        prenume.style.backgroundColor = "#f44141";
+                    }
+    
+                }
+
+            var regex=/^[0-9]+$/;
+            if(varsta.value.match(regex)){
+                age = true;
+                varsta.style.backgroundColor = "#4286f4";
+                alertaVar.style.display = "none";
+            } else {
+                varsta.style.backgroundColor = "#f44141";
+                alertaVar.style.display = "block";
+            }
+
+            if(telefon.value.match(regex)){
+                tel = true;
+                telefon.style.backgroundColor = "#4286f4";
+                alertaTel.style.display = "none";
+            } else {
+                telefon.style.backgroundColor = "#f44141";
+                alertaTel.style.display = "block";
+            }    
+            
+                
+            if(num && pre && age && tel){
+
+                var date =  {
+    
+                nume:nume.value,
+                prenume:prenume.value,
+                varsta: varsta.value,
+                telefon: [telefon.value]
+    
+                }
+
+                listaClienti.push(date);
+                drawClienti();
+            }
+                
+
+            
+                console.log(date);
+                e.preventDefault();
+
+
+            } else {
+
+
+                alert('Formularul este gol');
+
+            }
+                
+                
+    
+            
+            
+    
+        }
+    
+        
+            
+    
+        </script>
+
+
+
+
+
+</body>
+</html>
