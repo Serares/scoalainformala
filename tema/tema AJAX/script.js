@@ -73,6 +73,7 @@ btnVremea.addEventListener('click',function(elem,e){
             alerta.style.display = "none";
 
             var info = JSON.parse(this.responseText);
+            
             latitudine = info.coord.lat;
             longitudine = info.coord.lon;
 
