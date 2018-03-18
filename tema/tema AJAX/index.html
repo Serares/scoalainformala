@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vremea</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body onload="pageLoad(this,event)">
+        
+
+        <div class="main-container">
+
+            <div class="input">
+
+                <input type="text" id="oras" placeholder="numele orasului" style="padding-left:10px;">
+                <button class="buton" id="afVremea">Afiseaza Vremea</button>
+                <button class="buton" id="afProgn"> Afiseaza Prognoza </button>
+                <p id="alert" style="display:none;">Ai gresit numele orasului</p>
+
+            </div>
+
+            
+
+            <div class="vremea-acum">
+
+                <div class="head">
+                    
+                    <h1>Vremea Acum</h1>
+
+                </div>
+
+                <div class="vreme">
+
+                    <div class="date">
+
+                       
+                        <p id="descr">Descriere:</p> 
+                          <p id="umid"> Umiditate:</p>
+                         <p id="pres"> Presiune:</p>
+                         <p id="temp"> Temperatura curenta:</p>
+                      <p id="min"> Minima zilei:</p>
+                         <p id="max">  Maxima zilei:</p>
+                         
+                    </div>
+
+                    
+
+                </div>
+                <div id="googleMap" style="width:600px;height:250px; float:right;"></div>
+            </div>
+
+            <div class="prognoza-acum">
+
+                    <div class="head">
+                        
+                        <h1>Prognoza </h1>
+    
+                    </div>
+    
+                    <div class="prognoza">
+    
+                        <div class="prognoze">
+
+                           
+                        
+                        </div>
+                          
+                        </div>
+    
+                    </div>
+                </div>
+
+        </div>
+
+        <script src="script.js">
+            
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8B9riagbOzBPGAZWS2wW-hrRCZ3MHBm4&callback=myMap"></script>
+
+        
+
+        
+
+    </body>
+</html>

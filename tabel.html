@@ -20,57 +20,21 @@
     <script>
 
 
-        var listaClienti = [
-    
-        {
-            nume:"nourescu",
-            prenume:"bogdan",
-            varsta: 29,
-            telefon: ["07236293819"]
-        },
-    
-        {
-            nume:"vlad",
-            prenume:"cosmin",
-            varsta: 57,
-            telefon: ["072234819"]
-        },
-    
-        {
-            nume:"titel",
-            prenume:"ciocan",
-            varsta: 18,
-            telefon: ["073523219"]
-        },
-
-        {
-            nume:"gica",
-            prenume:"manuc",
-            varsta: 28,
-            telefon: ["073523219"]
-        },
-
-        {
-            nume:"sarbu",
-            prenume:"baurceanu",
-            varsta: 28,
-            telefon: ["073523219","08321998213"]
-        }
-    
-    
-        ];
+        var listaClienti = [];
+        
+        
 
         function drawClienti(){
 
             var tabel = document.querySelector("#tabelclienti tbody");
             var str = "";
+
+            
+
+
             for(let i = 0; i<listaClienti.length;i++){
 
-                
-                
-                
-                
-
+         
 
               var rand =  `
               
@@ -145,14 +109,36 @@
             drawClienti();
             td.classList.add(directieSortare);
         }
+        
+        var req = new XMLHttpRequest;
+
+        req.onreadystatechange = function(){
+
+if(this.readyState == 4 && this.status == 200 ){
+
+    var info = JSON.parse(this.responseText);
     
+    console.log(info);
+
+    listaClienti = info;
+
+    drawClienti();
+
+
+}
+console.log(listaClienti);
+}
+    
+
+    req.open('GET',"https://proiectnou-365f9.firebaseio.com/.json",true);
+    req.send();
         
     </script>
 </head>
 
 
 
-<body onload="drawClienti()">
+<body >
 
     
     <table border= "1"; id="tabelclienti">
