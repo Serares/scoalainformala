@@ -145,7 +145,7 @@ function desenVreme(dt){
 
 function desenProgn(d){
 
-
+    // arraiuri cu obiectele json ce sunt din ziua respectiva;
     var dturizi1 = [];
     var dturizi2 = [];
     var dturizi3 = [];
@@ -157,10 +157,11 @@ function desenProgn(d){
 
         var obj = d.list[i];
 
-        // console.log("i",obj.dt);
+       
         
         var date = new Date(obj.dt*1000);
 
+        // aici fac push la obiecte in array;
 
         if(date.getDate() == zi1.getDate()) dturizi1.push(obj);
         if(date.getDate() == zi2.getDate()) dturizi2.push(obj);  
@@ -171,11 +172,10 @@ function desenProgn(d){
 
     }
 
-    console.log("zi2",dturizi2);
-
-    console.log(dturizi3[0].main.temp);
     
-    // datele afisate;
+
+    // datele afisate
+
     var div1 = `<div style="background-color: #80bfff; margin: auto; margin-left: 27px; margin-top: 10px; padding: 4px; color: white; border-radius: 4px;font-size: 15px;">${zi1.getDate()+`-`+`0`+(zi1.getMonth()+1)+`-`+zi1.getFullYear()}</div>`;
 
     var div2 = `<div style="background-color: #80bfff; margin: auto; margin-left: 27px; margin-top: 10px; padding: 4px; color: white; border-radius: 4px;font-size: 15px;">${zi2.getDate()+`-`+`0`+(zi2.getMonth()+1)+`-`+zi2.getFullYear()}</div>`;
@@ -184,6 +184,8 @@ function desenProgn(d){
     var div5 = `<div style="background-color: #80bfff; margin: auto; margin-left: 27px; margin-top: 10px; padding: 4px; color: white; border-radius: 4px;font-size: 15px;">${zi5.getDate()+`-`+`0`+(zi5.getMonth()+1)+`-`+zi5.getFullYear()}</div>`;
     var div6 = `<div style="background-color: #80bfff; margin: auto; margin-left: 27px; margin-top: 10px; padding: 4px; color: white; border-radius: 4px;font-size: 15px;">${zi6.getDate()+`-`+`0`+(zi6.getMonth()+1)+`-`+zi6.getFullYear()}</div>`;
 
+    // divurile in care vor fi toate cartonasele cu intervale orare
+
     var prog1 = document.createElement('div');
     var prog2 = document.createElement('div');
     var prog3 = document.createElement('div');
@@ -191,16 +193,17 @@ function desenProgn(d){
     var prog5 = document.createElement('div');
     var prog6 = document.createElement('div');
 
-    // ora substr;
-
     
+
+    // creez cartonase pentru fiecare interval 
 
     for(let i=0;i<dturizi1.length;i++){
 
          div1 += `
         
-        <div class="intervale" style="text-align: center; margin-top:18px;  width:141px;">
+        <div class="intervale" style="text-align: center; margin-top:18px;  width:100%;">
         <img src="http://openweathermap.org/img/w/${dturizi1[i].weather[0].icon}.png" alt="imgDesc">
+        
         <p> Ora: ${dturizi1[i].dt_txt.substring(11)}
         <p>temperatura: ${dturizi1[i].main.temp}</p>
         <p>Descriere:${dturizi1[i].weather[0].description} </p>
@@ -214,7 +217,7 @@ function desenProgn(d){
 
         div2 += `
 
-        <div class="intervale" style="text-align: center; margin-top:18px;  width:141px;">
+        <div class="intervale" style="text-align: center; margin-top:18px;  width:100%;">
         <img src="http://openweathermap.org/img/w/${dturizi2[i].weather[0].icon}.png" alt="imgDesc">
         <p> Ora: ${dturizi2[i].dt_txt.substring(11)}
         <p>temperatura: ${dturizi2[i].main.temp}</p>
@@ -230,7 +233,7 @@ function desenProgn(d){
 
     div3 += `
 
-    <div class="intervale" style="text-align: center; margin-top:18px;  width:141px;">
+    <div class="intervale" style="text-align: center; margin-top:18px;  width:100%;">
     <img src="http://openweathermap.org/img/w/${dturizi3[i].weather[0].icon}.png" alt="imgDesc">
     <p> Ora: ${dturizi3[i].dt_txt.substring(11)}
     <p>temperatura: ${dturizi3[i].main.temp}</p>
@@ -246,7 +249,7 @@ for(let i=0;i<dturizi4.length;i++){
 
     div4 += `
 
-    <div class="intervale" style="text-align: center; margin-top:18px;  width:141px;">
+    <div class="intervale" style="text-align: center; margin-top:18px;  width:100%;">
     <img src="http://openweathermap.org/img/w/${dturizi4[i].weather[0].icon}.png" alt="imgDesc">
     <p> Ora: ${dturizi4[i].dt_txt.substring(11)}
     <p>temperatura: ${dturizi4[i].main.temp}</p>
@@ -262,7 +265,7 @@ for(let i=0;i<dturizi5.length;i++){
 
     div5 += `
 
-    <div class="intervale" style="text-align: center; margin-top:18px;  width:141px;">
+    <div class="intervale" style="text-align: center; margin-top:18px;  width:100%;">
     <img src="http://openweathermap.org/img/w/${dturizi5[i].weather[0].icon}.png" alt="imgDesc">
     <p> Ora: ${dturizi5[i].dt_txt.substring(11)}
     <p>temperatura: ${dturizi5[i].main.temp}</p>
@@ -278,7 +281,7 @@ for(let i=0;i<dturizi6.length;i++){
 
     div6 += `
 
-    <div class="intervale" style="text-align: center; margin-top:18px; width:141px;">
+    <div class="intervale" style="text-align: center; margin-top:18px; width:100%;">
     <img src="http://openweathermap.org/img/w/${dturizi6[i].weather[0].icon}.png" alt="imgDesc">
     <p> Ora: ${dturizi6[i].dt_txt.substring(11)}
     <p>temperatura: ${dturizi6[i].main.temp}</p>
@@ -289,6 +292,8 @@ for(let i=0;i<dturizi6.length;i++){
    `;
    
 }
+
+    // stil pentru divurile mari
 
     prog1.innerHTML = div1;
     
