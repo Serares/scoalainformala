@@ -298,37 +298,37 @@ for(let i=0;i<dturizi6.length;i++){
 
     prog1.innerHTML = div1;
     
-    prog1.style.width = "11%";
+    prog1.style.width = "13%";
     prog1.style.marginLeft = "100px";
     document.querySelector(".prognoze").appendChild(prog1);
 
     prog2.innerHTML = div2;
     
-    prog2.style.width = "11%";
+    prog2.style.width = "13%";
     prog2.style.marginLeft = "20px";
     document.querySelector(".prognoze").appendChild(prog2);
 
     prog3.innerHTML = div3;
     
-    prog3.style.width = "11%";
+    prog3.style.width = "13%";
     prog3.style.marginLeft = "20px";
     document.querySelector(".prognoze").appendChild(prog3);
 
     prog4.innerHTML = div4;
     
-    prog4.style.width = "11%";
+    prog4.style.width = "13%";
     prog4.style.marginLeft = "20px";
     document.querySelector(".prognoze").appendChild(prog4);
 
     prog5.innerHTML = div5;
     
-    prog5.style.width = "11%";
+    prog5.style.width = "13%";
     prog5.style.marginLeft = "20px";
     document.querySelector(".prognoze").appendChild(prog5);
 
     prog6.innerHTML = div6;
     
-    prog6.style.width = "11%";
+    prog6.style.width = "13%";
     prog6.style.marginLeft = "20px";
     document.querySelector(".prognoze").appendChild(prog6);
 
