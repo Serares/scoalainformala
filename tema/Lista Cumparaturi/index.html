@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista Comparaturi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+</head>
+
+<body>
+
+
+    <div class="main-container">
+
+        <div class="header">
+
+            <h2>Lista Cumparaturi</h2>
+
+            <div class="input">
+                <input type="text" placeholder="produs">
+                <button class="btn" onclick="addToList(),addProd()">Adauga Produs</button>
+            
+            </div>
+
+            <div class="btns">
+                <button id="asc" onclick="sortareAsc()">Asc</button>
+                <button id="desc">Desc</button>
+            </div>
+
+        </div>
+
+        <div class="produse">
+            <p onclick="checked(this,event)">Ceafa <input type="checkbox" ></p>
+        </div>
+
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>
