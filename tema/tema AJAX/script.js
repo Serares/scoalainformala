@@ -160,16 +160,16 @@ function desenProgn(d){
 
        
         
-        var date = new Date(obj.dt*1000);
-
+        var date = obj.dt_txt[8]+obj.dt_txt[9];
+		console.log(date);
         // aici fac push la obiecte in array;
 
-        if(date.getDate() == zi1.getDate()) dturizi1.push(obj);
-        if(date.getDate() == zi2.getDate()) dturizi2.push(obj);  
-        if(date.getDate() == zi3.getDate()) dturizi3.push(obj);
-        if(date.getDate() == zi4.getDate()) dturizi4.push(obj);
-        if(date.getDate() == zi5.getDate()) dturizi5.push(obj);
-        if(date.getDate() == zi6.getDate()) dturizi6.push(obj);
+        if(date == zi1.getDate()) dturizi1.push(obj);
+        if(date == zi2.getDate()) dturizi2.push(obj);  
+        if(date == zi3.getDate()) dturizi3.push(obj);
+        if(date == zi4.getDate()) dturizi4.push(obj);
+        if(date  == zi5.getDate()) dturizi5.push(obj);
+        if(date  == zi6.getDate()) dturizi6.push(obj);
 
     }
 

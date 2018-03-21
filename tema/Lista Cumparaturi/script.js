@@ -8,18 +8,7 @@ var desc = document.querySelector('#desc');
 
 var listaProd = [];
 
-// function checked(elem,e){
-//     console.log(elem.children);
 
-//     var chbx = elem.children;
-//     if(chbx.checked == "true"){
-//         console.log("este checked")
-//     } else {
-//         console.log('nu este checked');
-//     }
-//     // elem.style.textDecoration = "line-through";
-
-// }
 
 function addToList(){
 	
@@ -43,18 +32,32 @@ console.log(listaProd);
 		var str = `
 
 		
-			<p>${listaProd[i]}</p>
+			<p>${listaProd[i]} <span class="sterge" onclick="stergeElem(this,event)">Sterge</span></p>
 
 	`;
 		
 		prod += str;
 		
 	}
+	//  pot sa selectez toate butoanele cu clasa respectiva si sa iterez prin ele apoi sa iau evenimentul de pe butonul respectiv si sa ii pun display none parintelui 
 	
 	
 	divProduse.innerHTML = prod;
 	
 }
+
+
+	// stergere elemente
+
+	function stergeElem(elem,e){
+
+		// pot sa iterez prin toate elementele span dupa clasa si la respectivul span sa iau innerHTML
+		console.log(elem.parentNode.innerHTML);
+		elem.parentNode.style.textDecoration = "line-through";
+		listaProd
+
+	}
+
 
 	// sortare ascendenta ;
 	function sortareAsc(){

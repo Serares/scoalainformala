@@ -22,7 +22,31 @@
 
         var listaClienti = [];
         
-        
+        var req = new XMLHttpRequest;
+
+        req.onreadystatechange = function(){
+
+    if(this.readyState == 4 && this.status == 200 ){
+    listaClienti = [];
+    var info = JSON.parse(this.responseText);
+    
+    for(var i in info){
+        listaClienti.push(info[i])
+    }
+    
+
+    
+
+    drawClienti();
+
+
+}
+console.log(listaClienti);
+}
+    
+
+    req.open('GET',"https://proiectnou-365f9.firebaseio.com/.json",true);
+    req.send();
 
         function drawClienti(){
 
@@ -32,7 +56,7 @@
             
 
 
-            for(let i = 0; i<listaClienti.length;i++){
+            for(let i in listaClienti){
 
          
 
@@ -110,28 +134,7 @@
             td.classList.add(directieSortare);
         }
         
-        var req = new XMLHttpRequest;
-
-        req.onreadystatechange = function(){
-
-if(this.readyState == 4 && this.status == 200 ){
-
-    var info = JSON.parse(this.responseText);
-    
-    console.log(info);
-
-    listaClienti = info;
-
-    drawClienti();
-
-
-}
-console.log(listaClienti);
-}
-    
-
-    req.open('GET',"https://proiectnou-365f9.firebaseio.com/.json",true);
-    req.send();
+        
         
     </script>
 </head>
