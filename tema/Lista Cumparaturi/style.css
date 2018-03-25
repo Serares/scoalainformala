@@ -8,6 +8,7 @@ body{
     width:60%;
     background-color: #efefef;
     margin:auto;
+    border-radius: 14px;
 }
 
 .header{
@@ -82,3 +83,62 @@ body{
 .btns button:focus{
     outline:none;
 }
+
+/* produse */
+.produse{
+    padding-bottom: 10px;
+}
+.btnMark {
+
+    cursor: pointer;
+    float:right;
+    background-color: #ff4d4d;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.btnMark:hover{
+    background-color:#ff6666;
+}
+
+div > span{
+    margin-left: 40px;
+}
+
+.produse div:hover{
+
+    background-color:#667399;
+
+}
+
+.produse div {
+
+    border-radius: 4px;
+    width:50%;
+    height: 23px;
+    margin:auto;
+    margin-top: 5px;
+    
+}
+
+.titlu {
+    width: 44%;
+    margin: auto;
+    padding-left: 42px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+/* clasa pentru marcare produs */
+
+.marcat {
+
+    text-decoration: line-through;
+
+}
+
+

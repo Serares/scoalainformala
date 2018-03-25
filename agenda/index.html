@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agenda</title>
+</head>
+<body>
+    
+
+    <form method="POST" onsubmit="preluareDate(this,event)" style="background-color:thistle; width:500px; height:100px; margin-top:50px; padding:20px;">
+
+        <label>Nume</label> <input type="text" id="nume" >
+        
+        <p id="alertNum" style="display:none;">Doar litere </p> 
+ 
+        <label>telefon</label> <input type="text" id="telefon">
+ 
+        <p id="alertTel" style="display:none;">Doar cifre </p> 
+        <br>
+        <input type="submit" value="Adauga Contact" style="margin-left:60px;" onclick="insertData(),draw()">
+        
+     </form>
+
+
+     <div class="persoane">
+
+        <table class="tableAg" style="margin-left:30px; margin-top:30px; background-color:yellowgreen; width:300px;">
+            <thead >
+
+                <tr>
+                    <th>
+                        nume:
+                    </th>
+                    <th>
+                        telefon:
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="tb">
+
+
+
+            </tbody>
+
+        </table>
+     </div>
+
+
+<script>
+
+    var numInp = document.querySelector('#nume');
+    var telInp = document.querySelector('#telefon');
+    var table = document.querySelector('.tableAg');
+    var tableBod = document.querySelector('.tb');
+
+    var listaClienti = [];
+    var indexModificat = -1;
+
+    function insertData(){
+
+        var valNum =  numInp.value;
+        var valTel =  telInp.value;
+
+    var oBj = {
+
+        nume: valNum,
+        telefon : valTel
+
+    }
+
+    listaClienti.push(oBj);
+    console.log(listaClienti);
+
+    }
+
+
+
+function preluareDate(elem,e){
+    e.preventDefault();
+
+ 
+}
+
+function draw(){
+
+    var valNum =  numInp.value;
+    var valTel =  telInp.value;
+
+var html="";
+
+for(let i =0;i<listaClienti.length;i++){
+
+    html += `
+    <tr>
+    
+    <td> ${listaClienti[i].nume} </td>
+    <td> ${listaClienti[i].telefon} </td>
+    <td> <a href="#" onclick="modifica(${i})">Modifica</a> </td>
+    <td> <a href="#" onclick="sterge(${i})">Sterge</a> </td>
+    </tr>
+    `;
+
+
+}
+    
+
+    tableBod.innerHTML = html;
+}
+
+function sterge(index){
+
+    listaClienti.splice(index,1);
+    draw();
+}
+
+
+
+function modifica(index){
+
+var clienti = listaClienti[index];
+
+document.querySelector('#nume').value = clienti.nume;
+document.querySelector('#telefon').value = clienti.telefon;
+
+
+
+}
+
+
+
+</script>
+
+</body>
+</html>
