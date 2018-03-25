@@ -48,6 +48,7 @@ function desenare(){
 }
 
 // functie care pusheaza obiectele in array
+
  function createArr(elem,e){
 	var val = input.value;
 
@@ -102,3 +103,15 @@ function desenare(){
 	})
 	desenare();
  }
+
+
+
+function insertText(elem,e){
+
+	
+
+	if(e.keyCode == 13){
+		createArr();
+	}
+
+}
