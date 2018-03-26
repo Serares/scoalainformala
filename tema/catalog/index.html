@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Catalog</title>
+</head>
+<body>
+
+
+    <div class="main-container">
+
+        <div class="lista-elevi">
+
+            <h1>Lista elevi</h1>
+            <div class="form-input">
+            <label for="elev">Nume Elev:</label> <input type="text" placeholder="Nume" name="elev">
+            <button onclick="adaugaElev()">Adauga Elev</button>
+            </div>
+
+            <div class="tabelElevi">
+
+                <span>Sortare ascendent dupa medie</span><br>
+                <span>Sortare descendent dupa medie</span>
+
+                <table class="tbl">
+                    <thead class="thd">
+                    <tr>
+                        <th>
+                            <p>Niciun elev adaugat</p>
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="tbod">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="lista-note">
+
+            <button>Ascunde note elev</button>
+            <h1>Note Elev: </h1>
+
+        </div>
+
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+</html>
