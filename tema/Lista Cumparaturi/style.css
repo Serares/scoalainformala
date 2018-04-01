@@ -88,6 +88,17 @@ body{
 .produse{
     padding-bottom: 10px;
 }
+
+.btnDeselect {
+    cursor: pointer;
+    float:right;
+    background-color: #3366ff;
+    padding: 2px;
+    border-radius: 3px;
+}
+.btnDeselect:hover{
+    background-color: #3333ff;
+}
 .btnMark {
 
     cursor: pointer;

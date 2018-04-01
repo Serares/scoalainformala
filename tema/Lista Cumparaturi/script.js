@@ -28,6 +28,23 @@ function mark(index){
 	
 }
 
+function numeBtn(inde){
+	if(mark(inde) == "marcat"){
+		return 'Debifeaza';
+	} else {
+		return 'Bifeaza';
+	}
+}
+
+function clasaBtn(ind){
+	if(mark(ind) == "marcat"){
+		return 'btnDeselect';
+	} else {
+		return 'btnMark';
+	}
+}
+
+
 // functie care deseneaza html
 function desenare(){
 
@@ -37,7 +54,7 @@ function desenare(){
 		
 		var rand = `
 		
-		<div><span class="${mark(i)}">${listaProd[i].prod}</span> <span onclick="marcheaza(${i})" class="btnMark">Bifeaza</span> </div>
+		<div><span class="${mark(i)}">${listaProd[i].prod}</span> <span onclick="marcheaza(${i})" class="${clasaBtn(i)}">${numeBtn(i)}</span> </div>
 		
 		`
 		html += rand;
@@ -67,7 +84,12 @@ function desenare(){
 // functia de marcare a produsului care apeleaza functia draw() dupa ce a setat proprietatea pe true;
  function marcheaza(ind){
 
-	listaProd[ind].marcat = true;
+	if(listaProd[ind].marcat == true){
+		listaProd[ind].marcat = false;
+	} else if(listaProd[ind].marcat == false){
+		listaProd[ind].marcat = true;
+	}
+	
 	console.log(listaProd[ind]);
 	desenare();
 
