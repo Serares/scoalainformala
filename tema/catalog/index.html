@@ -17,20 +17,20 @@
 
             <h1>Lista elevi</h1>
             <div class="form-input">
-            <label for="elev">Nume Elev:</label> <input type="text" placeholder="Nume" name="elev">
+            <label for="elev">Nume Elev:</label> <input type="text" placeholder="Nume" name="elev" onkeypress="insertText(this,event)">
             <button onclick="adaugaElev()">Adauga Elev</button>
             </div>
 
             <div class="tabelElevi">
 
-                <span>Sortare ascendent dupa medie</span><br>
-                <span>Sortare descendent dupa medie</span>
+                <span onclick="sortAscMedie()">Sortare ascendent dupa medie</span><br>
+                <span onclick="sortDescMedie()">Sortare descendent dupa medie</span>
 
                 <table class="tbl">
                     <thead class="thd">
                     <tr>
                         <th>
-                            <p>Niciun elev adaugat</p>
+                            Niciun elev adaugat
                         </th>
                     </tr>
                     </thead>
@@ -47,12 +47,49 @@
 
         <div class="lista-note">
 
-            <button>Ascunde note elev</button>
-            <h1>Note Elev: </h1>
+            <button onclick="hideNote()">Ascunde note elev</button>
+		
+            <h1 id="numeElev">Note Elev: </h1>
+			
+			<div class="form-note">
+				
+				
+				
+			</div>
+			
+			<div class="tabelNote">
 
+                <div class="sortareDivNote">
+			<span>Sorteaza ascendent dupa note</span><br>
+			<span>Sorteaza descendent dupa note</span>
+                </div>
+
+			<table class="tblNote">
+				
+				<thead class="thdNote">
+                    <tr>
+                        <th>
+                            Nota:
+                        </th>
+                    </tr>
+                    </thead>
+				
+					<tbody class="tbodNote">
+				
+					
+					
+				
+					</tbody>	
+				
+				
+				</table>	
+			
+			</div>
+			
         </div>
 
     </div>
+    
     <script src="script.js">
     </script>
 </body>

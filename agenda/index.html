@@ -1,136 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agenda</title>
+	<script>
+
+		var listaClienti = [
+			{
+				nume: "Nourescu3",
+				telefon: "123"
+
+			},
+			{
+				nume: "Nourescu3",
+				telefon: "2333232"
+			},
+			{
+				nume: "Nourescu3",
+				telefon: "231232342"
+			}
+		];
+
+
+
+
+
+		var indexModificat = -1;
+
+		function adaugaClient(form, event) {
+
+			event.preventDefault();
+
+
+			if (indexModificat !== -1) {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						drawClienti();
+
+					}
+				};
+				xhttp.open("PUT", "https://proiect-agenda.firebaseio.com/"+indexModificat+".json", true);
+				xhttp.send(JSON.stringify({
+					nume: form.querySelector("[name=nume]").value,
+					telefon: form.querySelector("[name=telefon]").value,
+
+				}));
+				listaClienti[indexModificat] = {
+					nume: form.querySelector("[name=nume]").value,
+					telefon: form.querySelector("[name=telefon]").value,
+				};
+				indexModificat = -1;
+			} else {
+
+
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						drawClienti();
+
+					}
+				};
+				xhttp.open("POST", "https://proiect-agenda.firebaseio.com/.json", true);
+				xhttp.send(JSON.stringify({
+					nume: form.querySelector("[name=nume]").value,
+					telefon: form.querySelector("[name=telefon]").value,
+
+				}));
+
+			}
+
+
+		}
+
+		function sterge(index) {
+
+			var xhttp = new XMLHttpRequest();
+
+			xhttp.onreadystatechange = function () {
+				// listaClienti = [];
+				if (this.readyState == 4 && this.status == 200) {
+					var info = JSON.parse(this.responseText);
+					console.log(info);
+					drawClienti();
+				}
+			};
+
+			xhttp.open("DELETE", "https://proiect-agenda.firebaseio.com/"+index+".json", true);
+			xhttp.send();
+
+
+			
+		}
+		function modifica(index) {
+			var client = listaClienti[index];
+			document.querySelector("form [name=nume]").value = client.nume;
+			document.querySelector("form [name=telefon]").value = client.telefon;
+			indexModificat = index;
+		}
+
+
+
+		function drawClienti() {
+
+			var xhttp = new XMLHttpRequest();
+
+			xhttp.onreadystatechange = function () {
+				// listaClienti = [];
+				if (this.readyState == 4 && this.status == 200) {
+					listaClienti = [];
+					var server = JSON.parse(this.responseText);
+					for (var i in server) {
+						listaClienti.push(server[i]);
+					}
+
+
+					var tabel = document.querySelector("#listaClienti tbody");
+					var str = "";
+
+					for (var i = 0; i < listaClienti.length; i++) {
+
+						var rand = `<tr>
+							<td>${listaClienti[i].nume}</td>
+							<td>${listaClienti[i].telefon}</td>
+							<td><a href="#" onclick="modifica(${i})" >Modifica</a></td>
+							<td><a href="#" onclick="sterge(${i})" >Sterge</a></td>
+						</tr>`;
+						str += rand;
+					}
+					// console.log(str);
+					tabel.innerHTML = str;
+				}
+			};
+
+			xhttp.open("GET", "https://proiect-agenda.firebaseio.com/.json", true);
+
+			xhttp.send();
+
+
+		}
+
+
+	</script>
+
 </head>
-<body>
-    
 
-    <form method="POST" onsubmit="preluareDate(this,event)" style="background-color:thistle; width:500px; height:100px; margin-top:50px; padding:20px;">
+<body onload="drawClienti();">
+	<form method="post" onsubmit="adaugaClient(this,event);" style="background-color:#ffd100;border-radius:5px;max-width:500px;">
+		<fieldset style="border: 0px dashed #676767;">
+			<legend style="border: 0px dashed #676767;border-radius: 10px;padding: 0 5px;">Agenda</legend>
 
-        <label>Nume</label> <input type="text" id="nume" >
-        
-        <p id="alertNum" style="display:none;">Doar litere </p> 
- 
-        <label>telefon</label> <input type="text" id="telefon">
- 
-        <p id="alertTel" style="display:none;">Doar cifre </p> 
-        <br>
-        <input type="submit" value="Adauga Contact" style="margin-left:60px;" onclick="insertData(),draw()">
-        
-     </form>
+			<label for="nume">Nume:</label>
+			<input name="nume" id="nume" type="text">
 
-
-     <div class="persoane">
-
-        <table class="tableAg" style="margin-left:30px; margin-top:30px; background-color:yellowgreen; width:300px;">
-            <thead >
-
-                <tr>
-                    <th>
-                        nume:
-                    </th>
-                    <th>
-                        telefon:
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="tb">
+			<label for="telefon">Telefon:</label>
+			<input name="telefon" id="telefon" type="number">
+			<br>
 
 
 
-            </tbody>
+			<div style="text-align:center;">
+				<input type="submit" value="Salveaza" />
+			</div>
 
-        </table>
-     </div>
-
-
-<script>
-
-    var numInp = document.querySelector('#nume');
-    var telInp = document.querySelector('#telefon');
-    var table = document.querySelector('.tableAg');
-    var tableBod = document.querySelector('.tb');
-
-    var listaClienti = [];
-    var indexModificat = -1;
-
-    function insertData(){
-
-        var valNum =  numInp.value;
-        var valTel =  telInp.value;
-
-    var oBj = {
-
-        nume: valNum,
-        telefon : valTel
-
-    }
-
-    listaClienti.push(oBj);
-    console.log(listaClienti);
-
-    }
-
-
-
-function preluareDate(elem,e){
-    e.preventDefault();
-
- 
-}
-
-function draw(){
-
-    var valNum =  numInp.value;
-    var valTel =  telInp.value;
-
-var html="";
-
-for(let i =0;i<listaClienti.length;i++){
-
-    html += `
-    <tr>
-    
-    <td> ${listaClienti[i].nume} </td>
-    <td> ${listaClienti[i].telefon} </td>
-    <td> <a href="#" onclick="modifica(${i})">Modifica</a> </td>
-    <td> <a href="#" onclick="sterge(${i})">Sterge</a> </td>
-    </tr>
-    `;
-
-
-}
-    
-
-    tableBod.innerHTML = html;
-}
-
-function sterge(index){
-
-    listaClienti.splice(index,1);
-    draw();
-}
-
-
-
-function modifica(index){
-
-var clienti = listaClienti[index];
-
-document.querySelector('#nume').value = clienti.nume;
-document.querySelector('#telefon').value = clienti.telefon;
-
-
-
-}
-
-
-
-</script>
+		</fieldset>
+	</form>
+	<br />
+	<table id="listaClienti" style="background-color:#ffd100;border-radius:5px;padding: 20px;">
+		<thead>
+			<tr>
+				<td>Nume</td>
+				<td>Telefon</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
 
 </body>
+
 </html>

@@ -37,7 +37,7 @@ function desenare(){
 		
 		var rand = `
 		
-		<div><span class="${mark([i])}">${listaProd[i].prod}</span> <span onclick="marcheaza(${i})" class="btnMark">Bifeaza</span> </div>
+		<div><span class="${mark(i)}">${listaProd[i].prod}</span> <span onclick="marcheaza(${i})" class="btnMark">Bifeaza</span> </div>
 		
 		`
 		html += rand;
@@ -46,6 +46,7 @@ function desenare(){
 	divProduse.innerHTML = html;
 
 }
+
 
 // functie care pusheaza obiectele in array
 

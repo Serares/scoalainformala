@@ -25,10 +25,18 @@ body{
 
 }
 
+/* titlu note */
+
+#numeElev{
+
+    font-weight: 300;
+
+}
 
 /* lista note */
 
 .lista-note{
+    font-family: 'Roboto', sans-serif;
     width:50%;
     background-color:teal;
     float:right;
@@ -44,5 +52,31 @@ body{
 
 }
 
+.tblNote{
+    margin:auto;
+}
 
 
+/* butoanele de sortare */
+
+
+.tabelElevi span{
+
+    background-color: #4286f4;
+    padding: 2px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-top: 5px;
+    cursor: pointer;
+
+}
+
+.sortareDivNote span{
+
+    background-color: #598f24;
+    padding: 2px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-top: 5px;
+    cursor: pointer;
+}

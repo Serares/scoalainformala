@@ -1,0 +1,24 @@
+[
+        
+    {
+        "nume":"leni",
+        "prenume":"ionescu",
+        "varsta": 29,
+        "telefon": "07236293819"
+    },
+
+    {
+        "nume":"vlad",
+        "prenume":"cosmin",
+        "varsta": 57,
+        "telefon": "072234819"
+    },
+
+    {
+        "nume":"titel",
+        "prenume":"ciocan",
+        "varsta": 18,
+        "telefon": "073523219"
+    }
+
+    ]
