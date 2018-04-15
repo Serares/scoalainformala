@@ -94,8 +94,3 @@ function cerereAjax(){
 }
 
 
-function redirectAdd(){
-    
-    window.location = "../add/add.html";
-
-}

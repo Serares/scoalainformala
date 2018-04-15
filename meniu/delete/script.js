@@ -77,8 +77,3 @@ function stergere(){
 
 }
 
-
-
-function redirect(){
-    window.location = "/scoalainformala/meniu/admin/index.html";
-}
