@@ -66,7 +66,7 @@ function stergere(){
 
         if(this.readyState == 4 && this.status == 200){
 
-            window.location = "/admin/index.html";
+            window.location = "/scoalainformala/meniu/admin/index.html";
 
         }
     }
