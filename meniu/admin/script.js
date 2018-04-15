@@ -96,6 +96,6 @@ function cerereAjax(){
 
 function redirectAdd(){
     
-    window.location = "scoalainformala/meniu/add/add.html";
+    window.location = "/scoalainformala/meniu/add/add.html";
 
 }
