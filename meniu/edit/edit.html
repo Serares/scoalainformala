@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Edit</title>
+</head>
+<body onload="afisare()">
+    
+    <div class="main-div">
+        <div class="json2">
+            <span>Nume:</span><br>
+            <p class="nume"></p>
+            <span>Reteta:</span><br>
+            <p class="reteta"></p>
+            <span>Ingrediente:</span><br>
+            <p class="ingrediente"></p>
+            <span>Link Imagine:</span><br>
+            <p class="imagine"></p>
+        </div>
+
+        <div class="inputs">
+        <p>Modificare:</p>
+        <div style="display:none;" id="loading"><img src="../DYALX.gif" style="width:100px;height:100px;"></div>
+        <p style="display:none; color:red;" id="alerta">Completeaza toate campurile</p>
+        <input type="text" placeholder="nume"><br>
+        <input type="text" placeholder="ingrediente"><br>
+        <input type="text" placeholder="reteta"><br>
+        <input type="text" placeholder="imagine"><br>
+        <button onclick="modificare()">Modifica</button>
+        <button onclick="redirect()">Admin</button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

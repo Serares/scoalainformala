@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Meniu</title>
+
+</head>
+<body onload="cerereAjax()">
+    
+    <div class="main-div">
+
+        <div class="input-search">
+            <div class="titlu">
+            <h1>Meniu</h1>
+            <button class="btnContact" onclick="contactRedir()">Contact</button>
+            </div>
+
+            <div class="input">
+            <input type="text" placeholder="ingrediente" onkeypress="tastaEntr(this,event)"> <button onclick="cerereAjax()">Cauta ingredient</button>
+            
+            </div>
+        </div>
+
+        <div class="produse">
+
+            <table class="tblProduse">
+                
+
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

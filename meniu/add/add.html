@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Adaugare Produs</title>
+
+</head>
+
+<body>
+    
+<div class="main-div">
+
+    <div class="inputs">
+        <p style="display:none; color:red" id="alerta">Completeaza toate campurile</p>
+        <p style="display:none; color:#2db300" id="alerta2">Produs adaugat</p>
+        <p>Nume Produs</p>
+        <input type="text" placeholder="nume">
+        <p>Reteta</p>
+        <input type="text" placeholder="reteta">
+        <p>Ingrediente</p>
+        <input type="text" placeholder="ingrediente">
+        <p>Url Imagine</p>
+        <input type="text" placeholder="url"><br>
+
+        <button onclick="adaugaProdus()">Adauga Produs</button>
+        <button onclick="redirectAdmin()"> Admin </button>
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

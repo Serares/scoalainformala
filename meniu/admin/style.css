@@ -1,0 +1,126 @@
+
+body{
+    margin:0;
+    padding:0;
+    background-color: #b9dfdf;
+    font-family: 'Roboto', sans-serif;
+}
+
+a:hover{
+    cursor: auto;
+}
+
+.input-search{
+    padding-left:30px;
+    margin-bottom: 30px;
+}
+
+.input-search h1{
+    color:white;
+}
+
+.input-search button{
+    border: none;
+    color: white;
+    background-color: #669999;
+    height: 42px;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.input-search button:focus{
+    outline:none;
+}
+
+.input-search button:hover{
+    cursor: pointer;
+}
+
+.input-search button:active{
+    box-shadow: inset 1px 1px 5px #747373;
+}
+
+.tblProduse {
+    width:80%;
+    margin: auto;
+}
+
+.tblProduse .img{
+
+    margin-bottom: 20px;
+
+}
+
+.tblProduse img{
+    border: 1px solid white;
+    width: 130px;
+    height: 130px;
+}
+
+
+
+.tblProduse .detalii button{
+    font-size:20px;
+    margin-left:5px;
+    border: none;
+    color: white;
+    background-color: #669999;
+    height: 33px;
+    border-radius: 3px;
+    padding:6px;
+}
+
+.tblProduse .detalii button:focus{
+    outline:none;
+}
+
+.tblProduse .detalii button:hover{
+    cursor: pointer;
+}
+
+.tblProduse .detalii button:active{
+    box-shadow: inset 1px 1px 5px #747373;
+}
+
+.tblProduse .detalii .btnSterge{
+    font-size:20px;
+    margin-left:5px;
+    border: none;
+    color: white;
+    background-color: #e17070;
+    height: 33px;
+    border-radius: 3px;
+    padding:6px;
+}
+
+.tblProduse .detalii .btnSterge:focus{
+    outline: none;
+}
+
+.tblProduse .detalii .btnSterge:hover{
+    cursor :pointer;
+}
+
+.tblProduse .detalii .btnSterge:active{
+    box-shadow: inset 1px 1px 5px #747373;
+}
+
+
+
+#overlay {
+    text-align: center;
+    transition-delay: 3s;
+    transition-timing-function: linear;
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
