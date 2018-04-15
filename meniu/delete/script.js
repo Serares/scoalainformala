@@ -80,5 +80,5 @@ function stergere(){
 
 
 function redirect(){
-    window.location = "/admin/index.html";
+    window.location = "scoalainformala/meniu/admin/index.html";
 }
