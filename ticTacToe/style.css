@@ -1,0 +1,56 @@
+.tbl{
+	margin:auto;
+}
+
+#alerta{
+	color:red;
+	font-size:30px;
+}
+
+.alertX{
+	display:none;
+	color: blue;
+    display: inline-block;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-left: 8%;
+}
+
+.alert0{
+	display:none;
+	float: right;
+    color: green;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-right: 8%;
+}
+
+.tbl td{
+	
+	border:1px solid black;
+	width:80px;
+	height:80px;
+}
+
+
+.tbl img{
+	width:80px;
+	height:80px;
+}
+
+.overlay{
+	
+	text-align: center;
+	position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+	
+}

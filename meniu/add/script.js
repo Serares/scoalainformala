@@ -4,7 +4,7 @@ var produs = {
     "nume":null,
     "reteta":null,
     "ingrediente":null,
-    "url":null
+    "imagine":null
 }
 
 
@@ -30,7 +30,7 @@ if(numInp == "" || retetaInp == "" || ingredienteInp == "" || urlInp == ""){
     prod.nume = numInp;
     prod.reteta = retetaInp;
     prod.ingrediente = ingredienteInp;
-    prod.url = urlInp;   
+    prod.imagine = urlInp;   
     
 
     
