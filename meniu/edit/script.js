@@ -105,7 +105,3 @@ function modificare(){
     
 }
 
-
-function redirect(){
-    window.location = "/admin/index.html";
-}
