@@ -1,0 +1,133 @@
+body{
+    padding: 0;
+    margin:0;
+    height:100vh;
+}
+
+
+.header{
+    width:100%;
+
+}
+/* primul nav */
+.nav-bar{
+    width:100%;
+    height:70px;
+    background-color:#1f1f14;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-bar div{
+    display:inline-block;
+    
+}
+
+.titlu{
+    border-right:1px solid #ebebe0;
+    height:100%;
+    padding-right:10px;
+    padding-left:40px;
+}
+
+.titlu h2{
+
+    font-family: 'Raleway', sans-serif;
+}
+
+.titlu a{
+    text-decoration: none;
+    color:#efefef;
+}
+
+.titlu h2:hover{
+    cursor: pointer;
+}
+
+.search-nav{
+
+    margin-left: 378px;
+    width:45%;
+    text-align: center;
+
+}
+
+.search-nav input{
+
+    position: relative;
+    border:none;
+    width: 90%;
+    background: white url('img/srch.png') right no-repeat;
+    background-size: 18px;
+    padding: 10px 22px 10px 22px;
+    border-radius:30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size:18px;
+    letter-spacing: 2px;
+    z-index:3;
+
+}
+
+.search-nav input:focus{
+    outline: none;
+    box-shadow: inset 0px 0px 2px 2px #668cff;
+}
+
+
+.btns-nav{
+    margin-left: 68px;
+}
+
+.btns-nav div{
+    margin-right:20px;
+}
+
+.btns-nav img{
+    width:30px;
+}
+
+.btns-nav img:hover{
+    cursor: pointer;
+}
+
+
+/* overlay de input*/
+
+#overlay {
+
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+
+}
+
+
+/* nav bar doi */
+
+
+.nav-bar2{
+    width:100%;
+    height:50px;
+    background-color: #808080;
+}
+
+
+/* continutul */
+
+.continut {
+    display: flex;
+    background-color: #1f1f14;
+    height:100%;
+}
+
+
