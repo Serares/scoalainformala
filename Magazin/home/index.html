@@ -16,6 +16,7 @@
 <body onload="cerereAjax()">
 
     <div id="overlay" onclick="overlayOff()"></div>
+    <div id="overlay2" style="background-image:url('img/loading.gif'); background-repeat:no-repeat; background-position:center; background-size:100px 100px;">  </div>
     <div class="main-div">
 
         <div class="header">
@@ -39,7 +40,7 @@
                     
 
                     <div id="cart">
-                        <img src="img/cart.png" alt="cos">
+                        <a href="../cart/index.html"><img src="img/cart.png" alt="cos"></a>
                     </div>
                 </div>
 
@@ -52,18 +53,24 @@
 
         </div>
 
+        <div class="carusel" style="max-width:500px">
+                <img class="mySlides" src="imgProduse/iphx.jpg" style="width:100%">
+                <img class="mySlides" src="https://cdna.altex.ro/media/catalog/product/4/9/49PUS7502_12-RTP-global-001.jpg1_997e3e86.jpg" style="width:100%">
+                <img class="mySlides" src="imgProduse/iphx.jpg" style="width:100%">
+        </div>
+
         <div class="continut">
 
         <div class="iteme">
 
-            <div class="cartonas" >
+            <div class="cartonas">
 
                 <div id="imagineProdus" onclick="redirectDetalii()">
                     <img src="imgProduse/iphx.jpg" alt="imgProdus">
                 </div>
 
                 <div id="pretProdus">
-                    <span>999.99 $</span><span></span>
+                    <span>999.99$</span><span></span>
                 </div>
 
                 <div id="detaliiProdus">

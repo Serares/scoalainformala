@@ -11,6 +11,7 @@ function getParameterByName(name, url) {
 
 
 function desenare(data){
+    
     var tabel = document.querySelector('.tblProduse');
 
     var html = `

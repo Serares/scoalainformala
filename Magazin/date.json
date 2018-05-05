@@ -1,28 +1,55 @@
 [
-    {
+
+{
+    "produse":[
+        {
         "imagine":"https://cdn-4.nikon-cdn.com/e/Q5NM96RZZo-YRYNeYvAi9beHK4x3L-8h09FYyKWnWU6E2l1NOrWSBg==/Views/1581_D7500_left.png",
         "pret":3000,
-        "detalii":"Camera Nikon"
+        "nume":"Camera Nikon",
+        "cantitate":100,
+        "detalii":"cel mai bun"
     },
 
     {
         "imagine":"https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-gray-select-2017?wid=305&hei=358&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1515602510330",
         "pret":5000,
-        "detalii":"iphoneX"
+        "nume":"iphoneX",
+        "cantitate":100,
+        "detalii":"cel mai bun"
     },
     {
         "imagine":"https://ss7.vzw.com/is/image/VerizonWireless/pdp-samsung-star2-feature1-d-0218?$pngalpha$&scl=1",
         "pret":3000,
-        "detalii":"samsung s9"
+        "nume":"samsung s9",
+        "cantitate":100,
+        "detalii":"cel mai bun"
     },
     {
         "imagine":"http://media.4rgos.it/i/Argos/8361590_R_Z001A?$Web$&$DefaultPDP570$",
         "pret":3000,
-        "detalii":"Consola PlayStation 4"
+        "nume":"Consola PlayStation 4",
+        "cantitate":100,
+        "detalii":"cel mai bun"
     },
     {
         "imagine":"https://images-na.ssl-images-amazon.com/images/I/61x26DNGgAL._SL1200_.jpg",
         "pret":3000,
-        "detalii":"Consola XboxOne"
+        "nume":"Consola XboxOne",
+        "cantitate":100,
+        "detalii":"cel mai bun"
     }
+     ],
+    
+    "cart":[
+        {
+        "imagine":"https://cdn-4.nikon-cdn.com/e/Q5NM96RZZo-YRYNeYvAi9beHK4x3L-8h09FYyKWnWU6E2l1NOrWSBg==/Views/1581_D7500_left.png",
+        "pret":3000,
+        "nume":"Camera Nikon",
+        "cantitate":100,
+        "detalii":"cel mai bun"
+        }
+    ]
+    
+}
+
 ]
