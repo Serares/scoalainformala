@@ -1,0 +1,101 @@
+
+/* navbar  */
+body{
+    padding: 0;
+    margin:0;
+    height:100vh;
+    font-family: 'Raleway', sans-serif;
+    /* padding-top:100px; */
+}
+
+
+.header{
+    width:100%;
+    top:0;
+}
+
+.nav-bar{
+
+    width:100%;
+    height:70px;
+    background-color:#1f1f14;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.nav-bar div{
+    display:inline-block;
+    
+}
+
+.titlu{
+    border-right:1px solid #ebebe0;
+    height:100%;
+    padding-right:10px;
+    padding-left:40px;
+}
+
+.titlu h2{
+
+    font-family: 'Raleway', sans-serif;
+}
+
+.titlu a{
+    text-decoration: none;
+    color:#efefef;
+}
+
+.titlu h2:hover{
+    cursor: pointer;
+}
+
+.search-nav{
+
+    margin-left: 378px;
+    width:45%;
+    text-align: center;
+
+}
+
+
+.btns-nav{
+    margin-left: 68px;
+}
+
+.btns-nav div{
+    margin-right:20px;
+}
+
+.btns-nav img{
+    width:30px;
+}
+
+.btns-nav img:hover{
+    cursor: pointer;
+}
+
+
+/* tabel Produse */
+
+
+.tabel-produse table{
+
+    border:1px solid black;
+
+}
+
+.tabel-produse table tbody img{
+
+    width:40px;
+    height:40px;
+
+}
+
+.tabel-produse table tbody{
+    
+}
+
+
