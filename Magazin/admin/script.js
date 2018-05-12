@@ -77,6 +77,7 @@ function stergeProdus(id){
     req.open('DELETE',`https://proiect-magazin.firebaseio.com/0/produse/${id}/.json`);
     req.send();
 
+    
 }
 
 
@@ -148,8 +149,84 @@ function adaugare(){
 
 
 function editareProd(prd){
+//  trebuie un meniu cu inputuri pentru modificarea respectivului produs
+    // cerere AJAX ca sa iau datele produsului si sa le pun in imputuri
 
+    var req = new XMLHttpRequest;
+
+    req.onreadystatechange = function(){
+
+        if(this.readyState == 4 && this.status == 200){
+
+            var date = JSON.parse(this.responseText);
+            console.log(date);
+
+            var tabelProduse = document.querySelector('.tabel-produse');
+            document.querySelector('.totTabelul').style.display="none";
+            document.querySelector('.actual').innerHTML = "Editare Produs";
+
+
+            var rand = `
+
+            <div class="inputFieldEdit">
+
+            <input type="text" placeholder="Nume" value="${date.nume}">
+            <input type="text" placeholder="Imagine" value="${date.imagine}">
+            <input type="text" placeholder="Detalii" value="${date.detalii}">
+            <input type="number" placeholder="Cantitate" value="${date.cantitate}">
+            <input type="number" placeholder="pret" value="${date.pret}">
+            <button onclick="editare('${prd}')">Schimba</button>
+            </div>
+
+            `;
+
+     
+            tabelProduse.innerHTML += rand;
+           
+        }
+    }
+    
+    req.open('GET',`https://proiect-magazin.firebaseio.com/0/produse/${prd}.json`);
+    req.send();
+
+    
+}
+
+
+function editare(id){
+
+    var numeInp = document.querySelector('input[placeholder="Nume"]').value;
+    var imagineInp = document.querySelector('input[placeholder="Imagine"]').value;
+    var detaliiInp = document.querySelector('input[placeholder="Detalii"]').value;
+    var cantitateInp = document.querySelector('input[placeholder="Cantitate"]').value;
+    var pretInp = document.querySelector('input[placeholder="pret"]').value;
+
+    var objTrimis ={
+        "nume": numeInp,
+        "imagine": imagineInp,
+        "detalii":detaliiInp,
+        "cantitate": cantitateInp,
+        "pret": pretInp
+    };
+
+    var req = new XMLHttpRequest;
+
+    req.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+
+            document.querySelector('.tabel-produse').removeChild(document.querySelector('.inputFieldEdit'));
+            document.querySelector('.actual').innerHTML = "Produse";
+            cerereAjax();
+            
+           
+        }
+    }
+    
+    req.open('PUT',`https://proiect-magazin.firebaseio.com/0/produse/${id}.json`);
+    req.send(JSON.stringify(objTrimis));
 
 
 }
+
+
 

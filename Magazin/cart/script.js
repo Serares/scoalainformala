@@ -111,7 +111,7 @@ function adaugaCantitate(prod){
 
         //adaug produse in firebase;
 
-    // document.querySelector(`#${prod}`).value++;
+    document.querySelector(`#${prod}`).value++;
     var inputVal = document.querySelector(`#${prod}`).value;
 
 
@@ -156,10 +156,10 @@ function adaugaCantitate(prod){
 
 function scadeCantitate(prod){
 
-    // document.querySelector(`#${prod}`).value--;
+    document.querySelector(`#${prod}`).value--;
     var inputVal = document.querySelector(`#${prod}`).value;
 
-    if(inputVal == 1){
+    if(inputVal < 1){
 
         stergere(prod);
 

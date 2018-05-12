@@ -18,6 +18,7 @@ function getParameterByName(name, url) {
 }
 
 var idPagina = getParameterByName("id");
+var listaNumeProduse = [];
 
 function desenare(data){
 
@@ -43,6 +44,9 @@ var date;
 
     
 function cerereAjax(){
+
+
+
     var req = new XMLHttpRequest;
 
     req.onreadystatechange = function(){
@@ -50,7 +54,7 @@ function cerereAjax(){
             
             date = JSON.parse(this.responseText);
             
-            console.log(date);
+            
             desenare(date);
             document.querySelector('#overlay2').style.display = "none";
             
@@ -67,25 +71,91 @@ function cerereAjax(){
 
 function addToCart(){
 
-    var objTrimis = Object.create(obj);
-    objTrimis.nume = date.nume;
-    objTrimis.imagine = date.imagine;
-    objTrimis.detalii = date.detalii;
-    objTrimis.cantitate = document.querySelector('input[type="number"]').value;
-    objTrimis.pret = date.pret;
+    var req2 = new XMLHttpRequest;
 
+    req2.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            
+        var produseCart = JSON.parse(this.responseText);
+        var found = false;
+        var idProdusCart = '';
+        
+            // cauta prin numele din card si verifica daca se gaseste numele ca sa nu il mai adauge
+        for(let produse in produseCart){
+            
+            if(produseCart[produse].nume === date.nume){
+                found = true;
+                console.log('produsul exista');
+                idProdusCart+=produse;
+                break;
+            } else {
 
+                found = false;
+                   
+            }
+        }
+            // block ce adauga produsul sau mareste cantitatea
+            if(!found){
 
-    var req = new XMLHttpRequest;
-    console.log();
-    req.open('POST',`https://proiect-magazin.firebaseio.com/0/cart/.json`);
-    req.send(JSON.stringify(objTrimis));
+                let objTrimis = Object.create(obj);
+                objTrimis.nume = date.nume;
+                objTrimis.imagine = date.imagine;
+                objTrimis.detalii = date.detalii;
+                objTrimis.cantitate = document.querySelector('input[type="number"]').value;
+                objTrimis.pret = date.pret;
+            
+            
+            
+                var req = new XMLHttpRequest;
+                
+                req.open('POST',`https://proiect-magazin.firebaseio.com/0/cart/.json`);
+                req.send(JSON.stringify(objTrimis));
+            
+                document.querySelector('#alertaCumparare').style.display ='block';
+            
+                setTimeout(function(){
+                    document.querySelector('#alertaCumparare').style.display ='none';
+                },1000);
 
-    document.querySelector('#alertaCumparare').style.display ='block';
+            } else {
+                // un request GET ca sa iau datele produsului si un request PUT ca sa incrementez cantitatea produsului din cart;
 
-    setTimeout(function(){
-        document.querySelector('#alertaCumparare').style.display ='none';
-    },1000);
+                var reqGetProdusCart = new XMLHttpRequest;
+                reqGetProdusCart.onreadystatechange = function(){
+
+                    if(this.readyState == 4 && this.status == 200){
+                        var produsDinCart = JSON.parse(this.responseText);
+                        console.log(parseInt(produsDinCart.cantitate));
+                        var req3 = new XMLHttpRequest;
+
+                        let objTrimis = Object.create(obj);
+                        objTrimis.nume = date.nume;
+                        objTrimis.imagine = date.imagine;
+                        objTrimis.detalii = date.detalii;
+                        objTrimis.cantitate = parseInt(document.querySelector('input[type="number"]').value)+(parseInt(produsDinCart["cantitate"]));
+                        objTrimis.pret = date.pret;
+                        
+                        req3.open('PUT',`https://proiect-magazin.firebaseio.com/0/cart/${idProdusCart}.json`);
+                        req3.send(JSON.stringify(objTrimis));
+                        // alerta de adaugare cantitate
+                        document.querySelector('#adaugareCantitate').style.display ='block';
+            
+                        setTimeout(function(){
+                            document.querySelector('#adaugareCantitate').style.display ='none';
+                        },1000);       
+                    }
+                }
+
+                reqGetProdusCart.open('GET',`https://proiect-magazin.firebaseio.com/0/cart/${idProdusCart}.json`);
+                reqGetProdusCart.send();
+                   
+            } 
+        }
+    }
+    
+    req2.open('GET',`https://proiect-magazin.firebaseio.com/0/cart/.json`);
+    req2.send();
+
 
 }
 

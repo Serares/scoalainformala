@@ -245,3 +245,24 @@ body{
     
 }
 
+
+/* meniu dropdown */
+
+
+#dropMen {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 40%;
+    min-height: 200px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+    margin-left:25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#dropMen ul {
+    color:#1f1f14;
+}
