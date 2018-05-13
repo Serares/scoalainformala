@@ -1,5 +1,15 @@
 
 
+var searchNavMob = document.querySelector('.search-navMobile input');
+var dropMenMobile = document.querySelector('#dropMenMobile');
+
+searchNavMob.addEventListener('click',function(){
+    dropMenMobile.style.display = 'block';
+});
+document.getElementById("overlay").addEventListener('click',function(){
+    dropMenMobile.style.display = 'none';
+})
+
 function overlayOn(){
     document.getElementById("overlay").style.display = "block";
     document.querySelector('.dropdown-menu').style.display ="block" ;
@@ -10,7 +20,17 @@ function overlayOff(){
     document.querySelector('.dropdown-menu').style.display ="none";
 }
 
-
+function addCommas(nStr) {
+    nStr += '';
+    var x = nStr.split('.');
+    var x1 = x[0];
+    var x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + '.' + '$2');
+    }
+    return x1 + x2;
+}
 
 function desenare(data){
 
@@ -19,9 +39,6 @@ function desenare(data){
 
     for(let produs in data){
 
-        
-        
-        
         
 
             var rand = `
@@ -33,7 +50,7 @@ function desenare(data){
         </div>
 
         <div id="pretProdus">
-            <span id="pret">${data[produs].pret}</span><span id="lei">LEI</span>
+            <span id="pret">${addCommas(data[produs].pret)}</span><span id="lei">LEI</span>
         </div>
 
         <div id="detaliiProdus">
@@ -67,6 +84,7 @@ function cerereAjax(){
             
             desenare(date);
             document.querySelector('#overlay2').style.display = "none";
+            numarProduseCos();
         }
     }
     document.querySelector('#overlay2').style.display = "block";
@@ -89,12 +107,12 @@ function carousel() {
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}    
     x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+    setTimeout(carousel, 2500); // Change image every 2 seconds
 }
 
 
 
-function dropDown(elem,e){
+function dropDown(){
     var listProd = document.querySelector('.listaProduseInp');
     var inpVal = document.querySelector('input[placeholder="cauta"]');
     
@@ -109,20 +127,21 @@ function dropDown(elem,e){
             // console.log(date);
             
             for(let produs in date){
-                console.log(e);
+                
 
                 if((date[produs].nume.toLowerCase()).indexOf(inpVal.value.toLowerCase()) > -1){
                     var rand = `
                 
-                    <li>${date[produs].nume}</li>
+                    <a href="../detalii/index.html?id=${produs}"><li>${date[produs].nume}</li></a>
                     
                     `;
                     html += rand;
                 }
                
             }
-            console.log(html);
+            
             listProd.innerHTML = html;
+            
         }
     }
     
@@ -132,3 +151,75 @@ function dropDown(elem,e){
     
 
 }
+
+function dropDownMobile(){
+
+    
+    var listProdMobile = document.querySelector('.listaProduseInpMobile');
+    var inpValMob = document.querySelector('#srchinpMobile');
+    
+    var date;
+    var html ="";
+    var req = new XMLHttpRequest;
+
+    req.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+
+            date = JSON.parse(this.responseText);
+            // console.log(date);
+            
+            for(let produs in date){
+                
+                
+                if((date[produs].nume.toLowerCase()).indexOf(inpValMob.value.toLowerCase()) > -1){
+                    console.log(produs);
+                    var rand = `
+                
+                    <a href="../detalii/index.html?id=${produs}"><li>${date[produs].nume}</li></a>
+                    
+                    `;
+                    html += rand;
+                }
+               
+            }
+            
+            listProdMobile.innerHTML = html;
+        }
+    }
+    
+    req.open('GET','https://proiect-magazin.firebaseio.com/0/produse/.json');
+    req.send();   
+}
+
+// afiseaza numarul de produse din cart
+
+function numarProduseCos(){
+
+var numarProduseSpan = document.querySelector('.numarProduseCart');
+var numarProduseSpanMob = document.querySelector('.numarProduseCartMobile');
+var req = new XMLHttpRequest;
+
+    req.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+
+            var date = JSON.parse(this.responseText);
+            var numar=0;
+            for(let produs in date){
+                
+                numar++;
+            }
+            console.log(numar);
+            numarProduseSpan.innerHTML = numar;
+            numarProduseSpanMob.innerHTML = numar;
+            if(numar <1){
+                numarProduseSpan.style.display = "none";
+            }
+        }
+    }
+    
+    req.open('GET','https://proiect-magazin.firebaseio.com/0/cart/.json');
+    req.send();
+
+}
+
+

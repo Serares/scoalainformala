@@ -1,4 +1,18 @@
 
+
+function addCommas(nStr) {
+    nStr += '';
+    var x = nStr.split('.');
+    var x1 = x[0];
+    var x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + '.' + '$2');
+    }
+    return x1 + x2;
+}
+
+
 function desenare(data){
 
     var subtotal = [];
@@ -11,7 +25,7 @@ function desenare(data){
         let rand = `
         
         <tr>
-                    <td>
+                    <td colspan="5">
                         Cosul este gol.
                     </td>
                     
@@ -33,20 +47,24 @@ function desenare(data){
             
             <tr>
                         <td>
-                            <img href="${data[produse].imagine}">
+                            <img src="${data[produse].imagine}">
                             ${data[produse].nume}
                         </td>
-                        <td>
-                            <input type="number" min="1" value="${data[produse].cantitate}" id="${produse}">
-                            <button onclick="adaugaCantitate('${produse}')">+</button><button onclick="scadeCantitate('${produse}')">-</button>
+                        <td id="tdCantitate">
+                            <div class="inpQ">
+                            <input type="number" min="1" value="${data[produse].cantitate}" id="${produse}" readonly>
+                            </div>
+                            <div class="btnsQ">
+                            <div onclick="adaugaCantitate('${produse}')">+</div><div onclick="scadeCantitate('${produse}')">-</div>
+                            </div>
                         </td>
                         <td>
-                        ${data[produse].pret}
+                        ${addCommas(data[produse].pret)}
                         </td>
                         <td>
-                            ${(data[produse].pret) * (data[produse].cantitate)}
+                            ${addCommas((data[produse].pret) * (data[produse].cantitate))}
                         </td>
-                        <td>
+                        <td id="btnStergere">
                         <button onclick="stergere('${produse}')">Sterge</button>
                         </td>
                 </tr>
@@ -57,8 +75,8 @@ function desenare(data){
     
         var totalSubtotal = (subtotal.reduce(function(a,b){return a+b}));
     
-        document.querySelector('.tva').innerHTML = `TVA-ul ${(19 /100)*totalSubtotal}`;
-        document.querySelector('.totalFinal').innerHTML = `<span>Totalul</span><span>${(subtotal.reduce(function(a,b){return a+b})) + ((19 /100)*totalSubtotal)}</span>`;
+        document.querySelector('.tva').innerHTML = `<span>TVA-ul:</span><span id="tvaNr">${addCommas((19 /100)*totalSubtotal)}<span>`;
+        document.querySelector('.totalFinal').innerHTML = `<span>Totalul:</span><span id="totalFinalNr">${addCommas((subtotal.reduce(function(a,b){return a+b})) + ((19 /100)*totalSubtotal))}</span>`;
         document.querySelector('.tblBod').innerHTML = html;
     }
 
@@ -225,5 +243,9 @@ function stergeCart(){
 
 }
 
+function cumparaProduse(){
 
+    
+
+}
 

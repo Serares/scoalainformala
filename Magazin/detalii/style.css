@@ -28,7 +28,20 @@ body{
     display:inline-block;
     
 }
-
+#cart{
+    position: relative;
+}
+.numarProduseCart{
+    display: inline-block;
+    width: 16px;
+    text-align: center;
+    left: 20px;
+    position: absolute;
+    bottom: -1px;
+    background-color: red;
+    border-radius: 10px;
+    font-size:12px;
+}
 .titlu{
     border-right:1px solid #ebebe0;
     height:100%;
@@ -75,6 +88,10 @@ body{
 
 }
 
+.navBar-mobile{
+    display:none;
+}
+
 .search-nav input:focus{
     outline: none;
     box-shadow: inset 0px 0px 2px 2px #668cff;
@@ -95,6 +112,44 @@ body{
 
 .btns-nav img:hover{
     cursor: pointer;
+}
+
+/* meniu dropdown */
+
+
+#dropMen {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 37%;
+    min-height: 200px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+    margin-left: 28px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#dropMen ul {
+    color:#1f1f14;
+    list-style: none;
+    padding:none;
+    text-align: left;
+}
+#dropMen ul a{
+    text-decoration: none;
+}
+#dropMen ul li{
+    font-size:16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #93936c;
+    margin-bottom:5px;
+}
+
+#dropMen ul li:hover{
+    background-color:#ebebe0;
 }
 
 
@@ -130,32 +185,335 @@ body{
 
 }
 
-#alertaCumparare {
+#alertaCumparare{
 
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 15%; /* Full width (cover the whole page) */
-    height: 9%; /* Full height (cover the whole page) */
-    top: 0; 
-    left: 0;
-    right:0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Black background with opacity */
+    position: fixed;
+    display: none;
+    width: 50%; 
+    height: 9%; 
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    justify-content: center;
+    padding:4px 0;
+}
 
+#alertaCumparare p{
+    color:#fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 
-
 #adaugareCantitate{
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 20%; /* Full width (cover the whole page) */
-    height: 9%; /* Full height (cover the whole page) */
-    top: 0; 
-    left: 0;
-    right:0;
-    bottom: 0;
+    position: fixed;
+    display: none;
+    width: 50%; 
+    height: 9%; 
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    justify-content: center;
+    padding:4px 0;
+}
+
+#adaugareCantitate p {
+    color:#fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* continut */
+
+.continut{
+    width:100%;
+    margin-top:40px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.containerImagineOptiuni{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    width:80%;
+    margin:auto;
+    border-top:1px dotted #6b99c7;
+}
+.optiuniProdus{
+    margin-left:10px;
+    border-left:1px dotted #6b99c7;
+    padding-left:10px;
+}
+.titluProdus{
+    display:flex;
+    justify-content: center;
+    margin:20px auto;
+    border-top:1px solid #6b99c7;
+    width:80%;
+    padding-top:20px;
+}
+.titluProdus h1{
+    display: inline-block;
+    margin:0 auto;
+}
+.imagineProdus{
+    /* border: 1px solid black; */
+    display: inline-block;
+    width:40%;
+    display: flex;
+    justify-content: center;
+}
+.imagineProdus img{
+    width:100%;
+    max-height:360px;
+}
+
+.pretProdus p{
+    margin-bottom:8px; 
+    font-size:30px;
+    color:#244196;
+    font-weight: 700;
+}
+
+.cantitateProdus p{
+    margin-top:0;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    border-bottom:1px dotted #6b99c7;
+}
+
+.alegeCantitate{
+    margin-bottom:10px;
+}
+.alegeCantitate lable{
+    font-size:20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color:#244196;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+.alegeCantitate input{
+    font-size: 21px;
+    margin-left: 10px;
+    color:#0d0d0d;
+    width:30px;
+    padding:6px;
+    
+}
+
+.alegeCantitate input:focus{
+    outline:none;
+}
+.btnCart{
+    display: flex;
+    align-items: flex-start;
+     
+}
+.btnCart:hover{
+    cursor: pointer;
+}
+.btnCart span{
+    display: inline-block;
+    background-color:#244196;
+    padding:7px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.btnCart span img{
+    width:25px;
+}
+.btnCart button{
+    color:#fff;
+    background-color:#e41d34;
+    border:none;
+    width:180px;
+    padding:12px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.btnCart button:hover{
+    cursor: pointer;
+}
+
+/* subsol */
+
+.subsol{
+    margin-top:20px;
+    font-family: 'Roboto', sans-serif;
+    height:50px;
+    width:100%;
+    background-color:#1f1f14;
+    text-align: center;
+}
+
+.subsol .mesaj{
+    display: inline-block;
+    color: #ad3e23;
+    margin:10px auto;
+    
+}
+
+.subsol p{
+    display: inline-block;
+    margin:0 auto;
+    font-size:14px;
+    font-weight: 300;
+}
+
+/* media querry */
+
+@media screen and (max-width:760px){
+    .carusel{
+        display:none;
+    }
+
+    .nav-bar .search-nav{
+        display: none;
+    }
+    .nav-bar .btns-nav{
+        display:none;
+    }
+
+    .navBar-mobile{
+        display:block;
+        width:100%;
+        height:70px;
+        background-color:#1f1f14;
+        color:white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-top:1px solid #c2d6ce;      
+    }
+    
+    .navBar-mobile div{
+        display:inline-block;
+    }
+
+    .search-navMobile{
+        margin-left:10px;
+        
+    }
+
+    .search-navMobile input{
+        position: relative;
+        border:none;
+        width: 90%;
+        background: white url('../home/img/srch.png') right no-repeat;
+        background-size: 18px;
+        padding: 10px 22px 10px 22px;
+        border-radius:30px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size:18px;
+        letter-spacing: 2px;
+        z-index:3;    
+    }
+
+    #dropMenMobile {
+        display: none;
+        position: absolute;
+        background-color: #ffffff;
+        min-width: 37%;
+        min-height: 200px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 3;
+        margin-left: 28px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+
+    .btns-navMobile{
+        margin-left:20px;
+        
+    }
+    .btns-navMobile img{
+        width:30px;
+    }
+    .numarProduseCartMobile{
+        display: inline-block;
+        width: 16px;
+        text-align: center;
+        left: 20px;
+        position: absolute;
+        bottom: -1px;
+        background-color: red;
+        border-radius: 10px;
+        font-size:12px;    
+    }
+
+    .containerImagineOptiuni{
+        flex-direction: column;
+    }
+
+    #adaugareCantitate{
+        width:80%;
+    }
+    #alertaCumparare{
+        width:80%;
+    }
+    .imagineProdus{
+        width:100%;
+        border-bottom:1px dotted #6b99c7;
+        margin-bottom: 20px;
+    }
+    .optiuniProdus{
+        border-left:none;
+        margin-left:none;
+        padding-left:none;
+    }
+}
+
+@media screen and (max-width:1300px){
+
+    .search-nav{
+        margin-left:60px;
+        width:472px;
+    }
+    
+    #dropMen{
+        width: 250px;
+        margin-left:40px;
+    }
+}
+
+
+@media screen and (max-width:650px){
+    .iteme{
+        width:78%;
+        justify-content: center;
+    }
+    .btns-navMobile{
+        margin-left:38px;
+        
+    }
+}
+
+@media screen and (max-width: 414px){
+    #dropMenMobile{
+        min-width: 52%;
+        margin-left: 27px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    #dropMenMobile{
+        min-width: 54%;
+    }
 }

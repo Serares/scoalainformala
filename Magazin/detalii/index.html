@@ -11,11 +11,13 @@
 </head>
 <body onload="cerereAjax()">
 
-    <div id="alertaCumparare"></div>
-    <div id="adaugareCantitate"></div>
+    <div id="alertaCumparare"><p>*Produsul a fost adaugat in cos</p></div>
+    <div id="adaugareCantitate"><p>*Cosul a fost actualizat</p></div>
     <div id="overlay" onclick="overlayOff()"></div>
     <div id="overlay2" style="background-image:url('../home/img/loading.gif'); background-repeat:no-repeat; background-position:center; background-size:100px 100px;">  </div>
+
     <div class="main-container">
+
             <div class="header">
 
                     <div class="nav-bar">
@@ -25,7 +27,13 @@
                         </div>
         
                         <div class="search-nav">
-                            <input type="text" placeholder="cauta" id="srchinp" onfocus="overlayOn()">
+                            <input type="text" placeholder="cauta" id="srchinp" onfocus="overlayOn()" onkeypress="dropDown(this,event)" >
+                            <div class="dropdown-menu" id="dropMen">
+                                <ul class="listaProduseInp">
+                                    <li>Cauta produse</li>
+                                    
+                                </ul>
+                            </div>
                         </div>
         
                         <div class="btns-nav">
@@ -38,24 +46,60 @@
         
                             <div id="cart">
                                 <a href="../cart/index.html"><img src="../home/img/cart.png" alt="cos"></a>
+                                <span class="numarProduseCart"></span>
                             </div>
                         </div>
         
         
                     </div>
-        
+
+                <!-- pentru responsive -->
+            <div class="navBar-mobile">
+
+                <div class="search-navMobile">
+                    <input type="text" placeholder="cauta" id="srchinpMobile" onfocus="overlayOn()" onkeypress="dropDownMobile()" >
+                    <div class="dropdown-menuMobile" id="dropMenMobile">
+                        <ul class="listaProduseInpMobile">
+                            <li>Cauta produse</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="btns-navMobile">
+
+                        <div id="favorit">
+                            <img src="../home/img/favorites.png" alt="fav">
+                        </div>
+    
+                        
+    
+                        <div id="cart">
+                            <a href="../cart/index.html"><img src="../home/img/cart.png" alt="cos"></a>
+                            <span class="numarProduseCartMobile"></span>
+                        </div>
+                    </div>
+
+
+            </div>
+
                     <div class="nav-bar2">
         
                     </div>
         
                 </div>
 
+        <div class="continut">
+
         <div class="titluProdus">
             <h1>Iphone</h1>
         </div>
+        
+        <div class="containerImagineOptiuni">
         <div class="imagineProdus">
             <img href="">
         </div>
+        <div class="optiuniProdus">
+
         <div class="pretProdus">
             3Lei
         </div>
@@ -63,11 +107,22 @@
 
         </div>
         <div class="alegeCantitate">
-            <lable>Cantitate</lable><input type="number" placeholder="Alege Cantitatea" min="1" value="1">
+            <lable>Cantitate:</lable><input type="number" placeholder="Alege Cantitatea" min="1" value="1">
         </div>
-        <div class="btnCart">
+        <div class="btnCart" onclick="addToCart()">
             <a href=""><button>Adauga in cos</button></a>
         </div>
+
+        </div>
+        </div>
+    </div>
+
+    <div class="subsol">
+
+        <div class="mesaj"><p>*Proiect final</p></div>
+
+    </div>
+
     </div>
 
     <script src="script.js">
