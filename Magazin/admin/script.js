@@ -22,7 +22,7 @@ function desenare(data){
             <td>
             ${data[prod].pret}
             </td>
-            <td>
+            <td id="cantTD">
             ${data[prod].cantitate}
             </td>
             <td>

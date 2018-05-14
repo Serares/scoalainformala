@@ -114,6 +114,11 @@ body{
     padding:8px 10px;
 }
 
+#cantTD{
+    /* border-left:1px solid black; */
+    padding-left:8px;
+}
+
 .tabel-produse table tbody img{
 
     width:40px;

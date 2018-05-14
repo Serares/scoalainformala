@@ -258,6 +258,9 @@ input[type=number]::-webkit-inner-spin-button {
     .tabelProduse table td{
         padding:8px 5px;
     }
+    .cartonasTotal{
+        width:100%;
+    }
 }
 
 @media screen and (max-width:760px){
@@ -282,6 +285,18 @@ input[type=number]::-webkit-inner-spin-button {
         padding:1px 0;
         
     } 
+    .cartonasTotal{
+        width:100%;
+    }
+}
+
+@media screen and (max-width:375px){
+    .cartonasTotal{
+        width:100%;
+    }
+}
+
+@media screen and (max-width:320px){
     .cartonasTotal{
         width:100%;
     }
