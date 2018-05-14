@@ -302,6 +302,7 @@ body{
     margin-left: 28px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    overflow: scroll;
 }
 
 #dropMen ul {
@@ -322,6 +323,29 @@ body{
 }
 
 #dropMen ul li:hover{
+    background-color:#ebebe0;
+}
+
+.listaProduseInpMobile{
+    color:#1f1f14;
+    list-style: none;
+    padding:none;
+    text-align: left;
+}
+
+.listaProduseInpMobile a{
+    text-decoration: none;
+}
+
+.listaProduseInpMobile li{
+    font-size:16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #93936c;
+    margin-bottom:5px;
+}
+
+.listaProduseInpMobile li:hover{
     background-color:#ebebe0;
 }
 

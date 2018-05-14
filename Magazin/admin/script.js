@@ -87,6 +87,7 @@ function addProduct(){
 
     var tabelProduse = document.querySelector('.tabel-produse');
     document.querySelector('.totTabelul').style.display="none";
+    document.querySelector('#btnP').style.display="none";
     document.querySelector('.actual').innerHTML = "Adauga Produs";
 
 
@@ -141,7 +142,7 @@ function adaugare(){
     req.open('POST','https://proiect-magazin.firebaseio.com/0/produse/.json');
     req.send(JSON.stringify(objTrimis));
     // dau remove la divul de inputuri pe care il creez cu functia addProduct();
-
+    document.querySelector('#btnP').style.display="block";
     document.querySelector('.tabel-produse').removeChild(document.querySelector('.inputField'));
     document.querySelector('.actual').innerHTML = "Produse";
 }
@@ -162,6 +163,7 @@ function editareProd(prd){
             console.log(date);
 
             var tabelProduse = document.querySelector('.tabel-produse');
+            document.querySelector('#btnP').style.display="none";
             document.querySelector('.totTabelul').style.display="none";
             document.querySelector('.actual').innerHTML = "Editare Produs";
 
@@ -215,6 +217,7 @@ function editare(id){
         if(this.readyState == 4 && this.status == 200){
 
             document.querySelector('.tabel-produse').removeChild(document.querySelector('.inputFieldEdit'));
+            document.querySelector('#btnP').style.display="block";
             document.querySelector('.actual').innerHTML = "Produse";
             cerereAjax();
             

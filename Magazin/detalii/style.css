@@ -152,6 +152,29 @@ body{
     background-color:#ebebe0;
 }
 
+.listaProduseInpMobile{
+    color:#1f1f14;
+    list-style: none;
+    padding:none;
+    text-align: left;
+}
+
+.listaProduseInpMobile a{
+    text-decoration: none;
+}
+
+.listaProduseInpMobile li{
+    font-size:16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #93936c;
+    margin-bottom:5px;
+}
+
+.listaProduseInpMobile li:hover{
+    background-color:#ebebe0;
+}
+
 
 /* overlay de input*/
 
@@ -352,12 +375,14 @@ input[type=number]::-webkit-inner-spin-button {
 /* subsol */
 
 .subsol{
+    position: absolute;
     margin-top:20px;
     font-family: 'Roboto', sans-serif;
     height:50px;
     width:100%;
     background-color:#1f1f14;
     text-align: center;
+    bottom: 0;
 }
 
 .subsol .mesaj{
@@ -515,5 +540,23 @@ input[type=number]::-webkit-inner-spin-button {
 @media screen and (max-width: 375px){
     #dropMenMobile{
         min-width: 54%;
+    }
+}
+
+@media screen and (max-height:823px){
+    .subsol{
+        position: initial;
+    }
+}
+
+@media screen and (max-height:736px){
+    .subsol{
+        position: initial;
+    }
+}
+
+@media screen and (max-height:414px){
+    .subsol{
+        position: initial;
     }
 }

@@ -77,14 +77,41 @@ body{
     cursor: pointer;
 }
 
+.btnAdd h2{
+    display: inline-block;
+}
+
+.btnAdd button{
+    background-color: #e41d34;
+    border: none;
+    border-radius: 6px;
+    padding: 9px;
+    color: #fff;
+    float:left;
+}
+.btnAdd button:hover{
+    cursor: pointer;
+}
+.btnAdd div{
+    text-align:center;
+}
 
 /* tabel Produse */
-
+.tabel-produse {
+    font-family: 'Roboto', sans-serif;
+}
 
 .tabel-produse table{
 
-    border:1px solid black;
+    /* border:1px solid black; */
+    margin:auto;
+    width: 50%;
+}
 
+.tabel-produse table td{
+    border-bottom:1px dotted #008ed0;
+    
+    padding:8px 10px;
 }
 
 .tabel-produse table tbody img{
@@ -94,8 +121,112 @@ body{
 
 }
 
-.tabel-produse table tbody{
-    
+tbody a{
+    text-decoration: none;
+    color:#008ed0;
+
+}
+
+tbody a:hover{
+    color:#81d7ff;
+}
+
+tbody button{
+    background-color: #ebebeb;
+    border: none;
+    border-radius: 6px;
+    padding: 9px;
+    color: #000;
+}
+
+tbody button:hover{
+    cursor: pointer;
 }
 
 
+/* adauga produs */
+
+.inputField{
+    width:80%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputField input{
+    width:80%;
+    height:30px;
+    border:none;
+    border-bottom:1px solid #008ed0;
+    padding:10px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size:16px;
+}
+
+.inputField button{
+    width:100px;
+    background-color: #e41d34;
+    border: none;
+    border-radius: 6px;
+    padding: 9px;
+    color: #fff;
+    margin-top:20px;
+}
+
+.inputFieldEdit{
+    width:80%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputFieldEdit input{
+    width:80%;
+    height:30px;
+    border:none;
+    border-bottom:1px solid #008ed0;
+    padding:10px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size:16px;
+}
+
+.inputFieldEdit button{
+    width:100px;
+    background-color: #e41d34;
+    border: none;
+    border-radius: 6px;
+    padding: 9px;
+    color: #fff;
+    margin-top:20px;
+}
+
+
+
+@media screen and (max-width:760px){
+
+    .tabel-produse table td{
+        padding:8px 10px;
+        
+    }  
+    
+}
+
+@media screen and (max-width:579px){
+    .tabel-produse table td{
+        padding:2px 2px;
+    }
+}
+
+@media screen and (max-width:414px){
+    .tabel-produse table td{
+        padding:1px 0;
+        
+    } 
+    .tabel-produse table{
+        width:90%;
+    }
+}

@@ -95,10 +95,12 @@ function cerereAjax(){
     req.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             var date = JSON.parse(this.responseText);
+            
             desenare(date);
+            document.querySelector('#overlay2').style.display = "none";
         }
     }
-
+    document.querySelector('#overlay2').style.display = "block";
     req.open('get','https://proiect-magazin.firebaseio.com/0/cart.json');
     req.send();
 
@@ -244,8 +246,31 @@ function stergeCart(){
 }
 
 function cumparaProduse(){
+    var date;
+    var prodOb ={
+        cantitate: null,
+        detalii: null,
+        imagine:null,
+        nume: null,
+       pret:null
+    };
 
+    var req1 = new XMLHttpRequest;
     
+    req1.onreadystatechange = function(){
 
+        if(this.readyState == 4 && this.status == 200){
+
+           date = JSON.parse(this.responseText);
+            
+            for(let produs of date){
+                
+            }
+
+        }
+    }
+
+    req1.open('get',`https://proiect-magazin.firebaseio.com/0/cart/.json`);
+    req1.send();
 }
 
