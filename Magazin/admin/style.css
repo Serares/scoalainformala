@@ -109,9 +109,10 @@ body{
 }
 
 .tabel-produse table td{
+
     border-bottom:1px dotted #008ed0;
-    
     padding:8px 10px;
+    
 }
 
 #cantTD{

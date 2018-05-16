@@ -5,7 +5,9 @@ body{
     height:100vh;
     /* padding-top:100px; */
 }
-
+.main-container{
+    height:100%;
+}
 
 .header{
     width:100%;
@@ -255,6 +257,7 @@ body{
 /* continut */
 
 .continut{
+    height:100%;
     width:100%;
     margin-top:40px;
     font-family: 'Roboto', sans-serif;
@@ -375,7 +378,7 @@ input[type=number]::-webkit-inner-spin-button {
 /* subsol */
 
 .subsol{
-    position: absolute;
+    
     margin-top:20px;
     font-family: 'Roboto', sans-serif;
     height:50px;
@@ -412,6 +415,8 @@ input[type=number]::-webkit-inner-spin-button {
         margin-left:40px;
     }
 }
+
+
 
 @media screen and (max-width:760px){
     .carusel{
@@ -543,21 +548,5 @@ input[type=number]::-webkit-inner-spin-button {
     }
 }
 
-@media screen and (max-height:823px){
-    .subsol{
-        position: initial;
-    }
-}
 
-@media screen and (max-height:736px){
-    .subsol{
-        position: initial;
-    }
-}
-
-@media screen and (max-height:414px){
-    .subsol{
-        position: initial;
-    }
-}
 
