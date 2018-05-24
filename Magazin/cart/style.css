@@ -2,7 +2,7 @@
 body{
     padding: 0;
     margin:0;
-    height:100vh;
+    height:100%;
     /* padding-top:100px; */
 }
 
@@ -224,7 +224,6 @@ input[type=number]::-webkit-inner-spin-button {
 /* subsol */
 
 .subsol{
-    position: absolute;
     margin-top:20px;
     font-family: 'Roboto', sans-serif;
     height:50px;
