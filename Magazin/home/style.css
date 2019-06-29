@@ -10,6 +10,12 @@ body{
     width:100%;
     top:0;
 }
+
+.main-div{
+    height:auto;
+}
+
+
 /* primul nav */
 .nav-bar{
 
@@ -182,7 +188,6 @@ body{
     font-family: 'Roboto', sans-serif;
     display: flex;
     background-color:#ffffff;
-    height:100%;
     justify-content: center;
     border-top:1px solid #c2d6ce;
 }
@@ -508,5 +513,22 @@ body{
 @media screen and (max-width: 375px){
     #dropMenMobile{
         min-width: 54%;
+    }
+}
+
+
+@media screen and (min-width:1200px){
+    .main-div{
+        height:100vh;
+    }
+
+    .subsol{
+        position: absolute;
+        font-family: 'Roboto', sans-serif;
+        height: 50px;
+        width: 100%;
+        background-color: #1f1f14;
+        text-align: center;
+        bottom: 0;  
     }
 }
