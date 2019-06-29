@@ -60,10 +60,9 @@ function myMap(lat,lon) {
 // activeaza cand se incarca pagina;
 function pageLoad(elem,e){
 
-   
+function vremeaTrigger(elem,e){
 
-btnVremea.addEventListener('click',function(elem,e){
-
+    
     var req = new XMLHttpRequest();
 
     req.onreadystatechange = function() {
@@ -95,7 +94,16 @@ btnVremea.addEventListener('click',function(elem,e){
     
     
 
-})
+}
+
+btnVremea.addEventListener('click',function(elem,e){
+
+
+    vremeaTrigger(elem,e);
+
+});
+
+
 
 btnProg.addEventListener('click',function(elem,e){
 
@@ -336,10 +344,10 @@ for(let i=0;i<dturizi6.length;i++){
 
     // prog1.innerHTML += div1;
     // prognoze.innerHTML += div2;
-
+// paranteza de la desen prognoza
 }
 
-
+vremeaTrigger();
 
 // paranteza de la pageLoad
 }
